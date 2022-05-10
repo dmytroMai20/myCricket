@@ -20,6 +20,17 @@ public class WeatherConditions {
     }
     public void setData(HashMap<String,Object> data){
         //TODO assign all the class variables the hashmap values
+        datetime = data.get("datetime").toString();
+        temp = (float)data.get("temp");
+        humidity = (float)data.get("humidity");
+        precip = (float)data.get("precip");
+        precipprob = (float)data.get("precipprob");
+        snow = (float)data.get("snow");
+        windgust = (float)data.get("windgust");
+        windspeed = (float)data.get("windspeed");
+        visibility = (float)data.get("visibility");
+        uvindex = (float)data.get("uvindex");
+        severerisk = (float)data.get("severerisk");
     }
     public float getTemp() {
         return temp;
