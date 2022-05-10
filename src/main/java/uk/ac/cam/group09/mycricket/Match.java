@@ -7,6 +7,7 @@ public class Match{
     public WeatherConditions weather;
     private LocalDateTime dateTime;
     private HashMap<String,String> locationInfo;
+    private String matchName;
 
     public String getCity(){
         return locationInfo.get("City");
@@ -23,6 +24,10 @@ public class Match{
     public String getDay(){
         return dateTime.getDayOfMonth() + "/" + dateTime.getMonthValue() +
                 "/" + dateTime.getYear();
+    }
+
+    public String getMatchName(){
+        return matchName;
     }
 
 }

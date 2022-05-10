@@ -1,7 +1,7 @@
 # myCricket
 ## Backend: 
  - Weather handling (weather api, weather class, weather condition)
- - Map handling (google api)
+ - Map handling (google api) - now openlayers since google api is paid.
  - Match and location and match handler
 ## Frontend:
  - homescreen/watchscreen containing all the matches

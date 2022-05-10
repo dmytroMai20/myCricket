@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 public class Location{
     private HashMap<String,String> locationInfo;
+    private String locationName;
     public WeatherConditions weather;
 
     public String getAddress(){
@@ -12,5 +13,9 @@ public class Location{
 
     public String getCity(){
         return locationInfo.get("City");
+    }
+
+    public String getLocationName(){
+        return locationName;
     }
 }
