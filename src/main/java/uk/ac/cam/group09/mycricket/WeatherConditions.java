@@ -1,3 +1,5 @@
+package uk.ac.cam.group09.mycricket;
+
 import java.util.HashMap;
 
 public class WeatherConditions {

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MyCricket.iml" filepath="$PROJECT_DIR$/MyCricket.iml" />
+      <module fileurl="file://$PROJECT_DIR$/myCricketJavaFX.iml" filepath="$PROJECT_DIR$/myCricketJavaFX.iml" />
     </modules>
   </component>
 </project>
