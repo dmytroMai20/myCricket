@@ -2,6 +2,8 @@
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
+# Don't think you need this file - Simon
+.idea/runConfigurations.xml
 
 ### Eclipse ###
 .apt_generated
