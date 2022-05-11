@@ -10,4 +10,4 @@
  - display all the data about locations
  - Pages for adding matches/locations. Leave a blank StackPane in javafx to 
    allow for the map and search bar to be added. Matches need an 
-   input to enter time, locations just need the stackpane box.
+   input to enter time, locations just need the stackpane box. Both need to let the user enter a custom name for the match/location.
