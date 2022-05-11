@@ -70,7 +70,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                uk.ac.cam.group09.mycricket.mycricketjavafx/uk.ac.cam.group09.mycricket.HelloApplication
+                                uk.ac.cam.group09.mycricket.mycricketjavafx/uk.ac.cam.group09.mycricket.SampleMap
                             </mainClass>
                         </configuration>
                     </execution>

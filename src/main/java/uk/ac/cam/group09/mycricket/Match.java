@@ -9,8 +9,8 @@ public class Match{
     private HashMap<String,String> locationInfo;
     private String matchName;
 
-    public String getCity(){
-        return locationInfo.get("City");
+    public String getCountry(){
+        return locationInfo.get("Country");
     }
 
     public String getAddress(){

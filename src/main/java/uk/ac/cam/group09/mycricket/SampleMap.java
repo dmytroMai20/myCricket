@@ -11,23 +11,19 @@ import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 
-public class HelloApplication extends Application {
+public class SampleMap extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        //FXMLLoader fxmlLoader =new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-        //Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Hello!");
+        stage.setTitle("Sample Map");
         stage.show();
         WebView map = new WebView();
         setupMap (map);
-        Button submitButton = new Button("Print current lat and long to " +
-                "console");
-        submitButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                getLongLatFromMap(map);
-            }
-        });
+        Button submitButton = new Button("Print current info to console");
+        submitButton.setOnAction(e -> System.out.println(getLocationInfo(map)));
         StackPane stackPane = new StackPane();
         stackPane.getChildren().add(map);
         stackPane.getChildren().add(submitButton);
@@ -68,27 +64,66 @@ public class HelloApplication extends Application {
                 "}).addTo(map);\n" +
                 "\n" +
                 "let currentMarker = new L.Marker([0, 0]);\n" +
+                "var popUpText = \"\";\n" +
+                "var popUpName = \"\";\n" +
                 "var geocoder = L.Control.geocoder()\n" +
                 "                .on('markgeocode', function(event) {\n" +
                 "                    var center = event.geocode.center;\n" +
                 "\t\t    currentMarker = L.marker(center);\n" +
                 "  \t\t    currentMarker.addTo(map);\n" +
                 "                    map.setView(center, map.getZoom());\n" +
+                "                    popUpText = event.geocode.html;\n" +
+                "\t            popUpName = event.geocode.name;\n" +
                 "                })\n" +
                 "                .addTo(map);\n" +
+                "\n" +
                 "\n" +
                 "function returnLongAndLat(){\n" +
                 "\tvar longitude = currentMarker.getLatLng().lng;\n" +
                 "        var latitude = currentMarker.getLatLng().lat;\n" +
                 "        return longitude + \",\" + latitude\n" +
                 "}\n" +
+                "\n" +
+                "function returnMarkerText(){\n" +
+                "\treturn popUpText;\n" +
+                "}\n" +
+                "\n" +
+                "function returnMarkerName(){\n" +
+                "\treturn popUpName;\n" +
+                "}\n" +
                 "</script>\n" +
                 "</html>";
         webview.getEngine().loadContent(html);
     }
 
-    public void getLongLatFromMap(WebView map) {
-        System.out.println(map.getEngine().executeScript("returnLongAndLat();"));
+    public HashMap<String,String> getLocationInfo(WebView map) {
+        HashMap<String,String> locationInfo = new HashMap<>();
+        String[] latAndLong = ((String) map.getEngine().executeScript(
+                "returnLongAndLat();")).split(",");
+        locationInfo.put("Latitude",latAndLong[0]);
+        locationInfo.put("Longitude",latAndLong[1]);
+        String markerText = (String) map.getEngine().executeScript(
+                "returnMarkerText();");
+        String [] splitMarkerText = markerText.split(
+                "<span class=\"\">|</span>|<br/>|<span " +
+                        "class=\"leaflet-control-geocoder-address-context" +
+                        "\">|<span class=\"leaflet-control-geocoder" +
+                        "-address-detail\">");
+        String address = "";
+        String address2 = "";
+        for(int i = 0; i < splitMarkerText.length; i++){
+            if (!splitMarkerText[i].equals("")){
+                address = address2;
+                address2 =
+                        address2 + ", " + splitMarkerText[i].strip().replaceAll("&#x27;","'");
+            }
+        }
+        locationInfo.put("Address", address.substring(1));
+        String[] name = ((String) map.getEngine().executeScript(
+                "returnMarkerName();")).split(",");
+        String country = name[name.length-1];
+        locationInfo.put("Country",country.strip().replaceAll("&#x27;","'"));
+        return locationInfo;
     }
     public static void main(String[] args) {
         launch();

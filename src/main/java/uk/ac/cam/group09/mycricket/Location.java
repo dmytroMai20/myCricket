@@ -11,8 +11,8 @@ public class Location{
         return locationInfo.get("Address");
     }
 
-    public String getCity(){
-        return locationInfo.get("City");
+    public String getCountry(){
+        return locationInfo.get("Country");
     }
 
     public String getLocationName(){
