@@ -1,8 +1,11 @@
 package uk.ac.cam.group09.mycricket;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
@@ -18,8 +21,16 @@ public class HelloApplication extends Application {
         stage.show();
         WebView map = new WebView();
         setupMap (map);
+        Button submitButton = new Button("Print current lat and long to " +
+                "console");
+        submitButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                getLongLatFromMap(map);
+            }
+        });
         StackPane stackPane = new StackPane();
         stackPane.getChildren().add(map);
+        stackPane.getChildren().add(submitButton);
         Scene scene = new Scene(stackPane);
         stage.setScene(scene);
     }
@@ -50,18 +61,35 @@ public class HelloApplication extends Application {
                 "\n" +
                 "<div id=\"map\" style = \"height: 180px\"></div>\n" +
                 "<script>\n" +
-                "var map = L.map('map').setView([51.505, -0.09], 13);\n" +
+                "var map = L.map('map').setView([0, 0], 0);\n" +
                 "L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {\n" +
                 "attribution: '&copy; <a href=\"http://osm" +
                 ".org/copyright\">OpenStreetMap</a> contributors'\n" +
                 "}).addTo(map);\n" +
-                "L.Control.geocoder().addTo(map);\n" +
-                "</script>\n" +
                 "\n" +
+                "let currentMarker = new L.Marker([0, 0]);\n" +
+                "var geocoder = L.Control.geocoder()\n" +
+                "                .on('markgeocode', function(event) {\n" +
+                "                    var center = event.geocode.center;\n" +
+                "\t\t    currentMarker = L.marker(center);\n" +
+                "  \t\t    currentMarker.addTo(map);\n" +
+                "                    map.setView(center, map.getZoom());\n" +
+                "                })\n" +
+                "                .addTo(map);\n" +
+                "\n" +
+                "function returnLongAndLat(){\n" +
+                "\tvar longitude = currentMarker.getLatLng().lng;\n" +
+                "        var latitude = currentMarker.getLatLng().lat;\n" +
+                "        return longitude + \",\" + latitude\n" +
+                "}\n" +
+                "</script>\n" +
                 "</html>";
         webview.getEngine().loadContent(html);
     }
 
+    public void getLongLatFromMap(WebView map) {
+        System.out.println(map.getEngine().executeScript("returnLongAndLat();"));
+    }
     public static void main(String[] args) {
         launch();
     }
