@@ -1,11 +1,12 @@
 package uk.ac.cam.group09.mycricket;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class MatchHandler {
-    private static ArrayList<Match> matches;
+    private static LinkedList<Match> matches;
 
-    public static ArrayList<Match> getMatches() {
+    public static LinkedList<Match> getMatches() {
         return matches;
     }
 
