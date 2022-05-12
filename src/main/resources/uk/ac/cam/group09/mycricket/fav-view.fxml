@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="844.0" prefWidth="390.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uk.ac.cam.group09.mycricket.controllers.FavController">
+<VBox alignment="CENTER" prefHeight="844.0" prefWidth="390.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uk.ac.cam.group09.mycricket.controllers.FavController">
     <ScrollPane hbarPolicy="NEVER" prefHeight="770.0" prefWidth="390.0">
         <content>
             <AnchorPane minWidth="-Infinity" prefWidth="388.0">
@@ -21,7 +21,7 @@
                             <Font name="SF Pro Display Bold" size="48.0" />
                         </font>
                     </Label>
-                    <VBox layoutX="20.0" layoutY="150.0" prefHeight="200.0" prefWidth="100.0" />
+                    <VBox fx:id="favCardBox" layoutX="20.0" layoutY="150.0" spacing="10.0" />
                 </children>
                 <padding>
                     <Insets left="20.0" right="20.0" />
@@ -31,7 +31,7 @@
     </ScrollPane>
     <HBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="74.0" prefWidth="390.0">
         <children>
-            <Button fx:id="homeButton" contentDisplay="GRAPHIC_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchToHome" prefHeight="74.0" prefWidth="130.0">
+            <Button fx:id="homeButton" contentDisplay="GRAPHIC_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchToHome" prefHeight="74.0" prefWidth="130.0" style="-fx-background-color: transparent;">
                 <graphic>
                     <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                         <image>
@@ -39,7 +39,7 @@
                         </image>
                     </ImageView>
                 </graphic></Button>
-            <Button fx:id="addButton" contentDisplay="GRAPHIC_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#openNewFav" prefHeight="74.0" prefWidth="130.0">
+            <Button fx:id="addButton" contentDisplay="GRAPHIC_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#openNewFav" prefHeight="74.0" prefWidth="130.0" style="-fx-background-color: transparent;">
                 <graphic>
                     <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                         <image>
@@ -48,7 +48,7 @@
                     </ImageView>
                 </graphic>
             </Button>
-            <Button fx:id="favButton" contentDisplay="GRAPHIC_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="74.0" prefWidth="130.0">
+            <Button fx:id="favButton" contentDisplay="GRAPHIC_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="74.0" prefWidth="130.0" style="-fx-background-color: transparent;">
                 <graphic>
                     <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                         <image>

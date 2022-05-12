@@ -5,7 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5fd77470-896b-42b0-9e3e-5328f4f16f2e" name="Changes" comment="handling exceptions">
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/uk/ac/cam/group09/mycricket/fav-card-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/uk/ac/cam/group09/mycricket/watch-card-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/CricketApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/CricketApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/controllers/FavController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/controllers/FavController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/controllers/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/controllers/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/controllers/NewFavController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/controllers/NewFavController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/controllers/NewWatchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/controllers/NewWatchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/uk/ac/cam/group09/mycricket/fav-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/uk/ac/cam/group09/mycricket/fav-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/uk/ac/cam/group09/mycricket/home-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/uk/ac/cam/group09/mycricket/home-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/uk/ac/cam/group09/mycricket/new-fav-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/uk/ac/cam/group09/mycricket/new-fav-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/uk/ac/cam/group09/mycricket/new-watch-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/uk/ac/cam/group09/mycricket/new-watch-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +29,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -41,21 +55,53 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "last_opened_file_path": "/Users/kate/IdeaProjects/myCricket/src/main/resources/uk/ac/cam/group09/mycricket",
+    "project.structure.last.edited": "Facets",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
+  }
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/uk/ac/cam/group09/mycricket" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="H:\My Drive\CST Part IA\Interaction Design\myCricket\src\main\java\uk\ac\cam\group09\mycricket" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.WeatherApiHandler">
-    <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.CricketApp">
+    <configuration name="CricketApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="uk.ac.cam.group09.mycricket.CricketApp" />
+      <module name="myCricketJavaFX" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uk.ac.cam.group09.mycricket.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SampleMap" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="uk.ac.cam.group09.mycricket.SampleMap" />
+      <module name="myCricketJavaFX" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uk.ac.cam.group09.mycricket.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="uk.ac.cam.group09.mycricket.HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-18" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="uk.ac.cam.group09.mycricket.HelloApplication" />
       <module name="myCricketJavaFX" />
       <extension name="coverage">
@@ -68,7 +114,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WeatherApiHandler" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="uk.ac.cam.group09.mycricket.WeatherApiHandler" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-18" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="uk.ac.cam.group09.mycricket.WeatherApiHandler" />
       <module name="myCricketJavaFX" />
       <extension name="coverage">
@@ -81,10 +129,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.CricketApp" />
+      <item itemvalue="Application.SampleMap" />
+      <item itemvalue="Application.uk.ac.cam.group09.mycricket.HelloApplication" />
+      <item itemvalue="Application.uk.ac.cam.group09.mycricket.WeatherApiHandler" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.WeatherApiHandler" />
-        <item itemvalue="Application.HelloApplication" />
+        <item itemvalue="Application.CricketApp" />
+        <item itemvalue="Application.SampleMap" />
+        <item itemvalue="Application.uk.ac.cam.group09.mycricket.WeatherApiHandler" />
+        <item itemvalue="Application.uk.ac.cam.group09.mycricket.HelloApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -166,7 +222,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

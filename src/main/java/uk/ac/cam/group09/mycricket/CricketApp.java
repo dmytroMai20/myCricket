@@ -29,7 +29,7 @@ public class CricketApp extends Application {
         FavController favController = fxmlLoader2.getController();
         favController.setUp(stage, scene, scene2, dialogStage);
 
-        // initialize to home pageimport uk.ac.cam.group09.mycricket.CricketApp;
+        // initialize to home
         stage.setScene(scene);
         stage.setTitle("Cricket Weather App");
         stage.show();

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="350.0" prefWidth="350.0" style="-fx-background-color: #679BF1#679BF1;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox prefWidth="330.0" spacing="20.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <HBox alignment="CENTER" prefWidth="330.0">
+               <children>
+                  <VBox alignment="CENTER_LEFT" prefWidth="230.0">
+                     <children>
+                        <Label text="Event #1" textFill="WHITE">
+                           <font>
+                              <Font name="SF Pro Display Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label opacity="0.8" text="2022-05-05 14:00" textFill="WHITE">
+                           <font>
+                              <Font name="SF Pro Display Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label opacity="0.8" text="Cambridge Sports Centre" textFill="WHITE" wrapText="true">
+                           <font>
+                              <Font name="SF Pro Display Bold" size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <Label alignment="TOP_RIGHT" contentDisplay="TOP" prefWidth="100.0" text="18˚" textAlignment="RIGHT" textFill="WHITE">
+                     <font>
+                        <Font name="SF Pro Display Regular" size="48.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <VBox>
+               <children>
+                  <Label opacity="0.8" text="There might be something that you wanna fill in here..." textFill="#e5e5e5" wrapText="true">
+                     <font>
+                        <Font name="SF Pro Display Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label opacity="0.8" text="But I'm not sure what." textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font name="SF Pro Display Bold" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
