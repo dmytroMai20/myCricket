@@ -1,7 +1,9 @@
-module myCricketJavaFX {
+module uk.ac.cam.group09.mycricket {
     requires javafx.controls;
     requires javafx.fxml;
-    requires javafx.web;
+
+    requires org.kordamp.bootstrapfx.core;
+
+    opens uk.ac.cam.group09.mycricket to javafx.fxml;
     exports uk.ac.cam.group09.mycricket;
-    opens uk.ac.cam.group09.mycricket;
 }
