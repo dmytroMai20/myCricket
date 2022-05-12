@@ -1,11 +1,12 @@
 package uk.ac.cam.group09.mycricket;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class LocationHandler {
-    private static ArrayList<Location> locations;
+    private static LinkedList<Location> locations;
 
-    public static ArrayList<Location> getLocations(){
+    public static LinkedList<Location> getLocations(){
         return locations;
     }
 
