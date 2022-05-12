@@ -1,7 +1,6 @@
-package uk.ac.cam.group09.mycricket;
+package uk.ac.cam.group09.mycricket.services;
 
 import java.time.LocalDateTime;
-import java.util.HashMap;
 
 public class Weather {
     public static String getWeather(String location, LocalDateTime dateTime){

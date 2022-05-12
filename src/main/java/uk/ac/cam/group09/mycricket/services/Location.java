@@ -1,4 +1,7 @@
-package uk.ac.cam.group09.mycricket;
+package uk.ac.cam.group09.mycricket.services;
+
+import uk.ac.cam.group09.mycricket.services.Weather;
+import uk.ac.cam.group09.mycricket.services.WeatherConditions;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;

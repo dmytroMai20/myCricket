@@ -5,29 +5,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5fd77470-896b-42b0-9e3e-5328f4f16f2e" name="Changes" comment="Rehaul">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/HelloApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/HelloController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/Location.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/Match.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/Weather.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/WeatherApiHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/WeatherConditions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/uk/ac/cam/group09/mycricket/hello-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/CricketApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/controllers/FavController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/controllers/HomeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/controllers/NewFavController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/controllers/NewWatchController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/uk/ac/cam/group09/mycricket/fav-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/uk/ac/cam/group09/mycricket/home-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/uk/ac/cam/group09/mycricket/icons/add_circle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/uk/ac/cam/group09/mycricket/icons/add_circle.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/uk/ac/cam/group09/mycricket/icons/cancel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/uk/ac/cam/group09/mycricket/icons/cancel.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/uk/ac/cam/group09/mycricket/icons/home.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/uk/ac/cam/group09/mycricket/icons/home.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/uk/ac/cam/group09/mycricket/icons/keyboard_arrow_left.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/uk/ac/cam/group09/mycricket/icons/keyboard_arrow_left.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/uk/ac/cam/group09/mycricket/icons/search.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/uk/ac/cam/group09/mycricket/icons/search.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/uk/ac/cam/group09/mycricket/icons/star.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/uk/ac/cam/group09/mycricket/icons/star.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/uk/ac/cam/group09/mycricket/new-fav-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/uk/ac/cam/group09/mycricket/new-watch-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyCricket.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Location.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Match.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Weather.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/WeatherApiHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/WeatherConditions.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/services/Location.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/LocationHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/services/LocationHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/Match.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/services/Match.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/MatchHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/services/MatchHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/SampleMap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/Weather.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/services/Weather.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/WeatherApiHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/services/WeatherApiHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/WeatherConditions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/services/WeatherConditions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/uk/ac/cam/group09/mycricket/hello-view.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +49,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -55,17 +67,77 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/home/haoxiang/Desktop/projects/cambridge/interactive/myCricket/src/main/resources",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.42873564"
+  }
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$/src/main/resources/uk/ac/cam/group09/mycricket" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/uk/ac/cam/group09/mycricket" />
+      <recent name="$PROJECT_DIR$/src/main/resources/mycricket" />
       <recent name="H:\My Drive\CST Part IA\Interaction Design\myCricket\src\main\java\uk\ac\cam\group09\mycricket" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="uk.ac.cam.group09.mycricket" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.CricketApp">
+    <configuration name="CricketApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="uk.ac.cam.group09.mycricket.CricketApp" />
+      <module name="myCricketJavaFX" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uk.ac.cam.group09.mycricket.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="uk.ac.cam.group09.mycricket.HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="uk.ac.cam.group09.mycricket.HelloApplication" />
+      <module name="myCricketJavaFX" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uk.ac.cam.group09.mycricket.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="uk.ac.cam.group09.mycricket.SampleMap" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="uk.ac.cam.group09.mycricket.SampleMap" />
+      <module name="myCricketJavaFX" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uk.ac.cam.group09.mycricket.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.CricketApp" />
+        <item itemvalue="Application.uk.ac.cam.group09.mycricket.SampleMap" />
+        <item itemvalue="Application.uk.ac.cam.group09.mycricket.HelloApplication" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -116,7 +188,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

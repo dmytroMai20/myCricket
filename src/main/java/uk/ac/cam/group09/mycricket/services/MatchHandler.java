@@ -1,6 +1,5 @@
-package uk.ac.cam.group09.mycricket;
+package uk.ac.cam.group09.mycricket.services;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class MatchHandler {
