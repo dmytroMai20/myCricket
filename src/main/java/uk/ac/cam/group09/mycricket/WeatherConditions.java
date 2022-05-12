@@ -73,8 +73,42 @@ public class WeatherConditions {
             return new Risk(Risk.RiskLevel.HIGH, "postpone game due to excessive rainfall");
         }
 
-        return new Risk(Risk.RiskLevel.NONE);
+        // TODO: Check units that API returns for windspeed and windgust
+        /* Wind
+        Threat Level Descriptions (weather.gov)
 
+        Extreme
+        "An Extreme Threat to Life and Property from High Wind."
+        "Damaging high wind" with sustained speeds greater than 58 mph, or frequent wind gusts greater than 58 mph. Damaging wind conditions are consistent with a high wind warning.
+
+        High
+        "A High Threat to Life and Property from High Wind."
+        "High wind" with sustained speeds of 40 to 57 mph. Wind conditions consistent with a high wind warning.
+
+        Moderate
+        "A Moderate Threat to Life and Property from High Wind."
+        "Very windy" with sustained speeds of 26 to 39 mph, or frequent wind gusts of 35 to 57 mph. Wind conditions consistent with a wind advisory.
+
+        Low
+        "A Low Threat to Life and Property from High Wind."
+        "Windy" conditions. Sustained wind speeds of 21 to 25 mph, or frequent wind gusts of 30 to 35 mph.
+
+        Very Low
+        " A Very Low Threat to Life and Property from High Wind."
+        "Breezy" to "Windy" conditions. Sustained wind speeds around 20 mph, or frequent gusts of 25 to 30 mph.
+         */
+
+        if (windspeed >= 58 || windgust > 58) {
+            return new Risk(Risk.RiskLevel.EXTREME, "extreme threat to life and property from high wind.");
+        } else if (windspeed  >= 40) {
+            return new Risk(Risk.RiskLevel.HIGH, "high threat to life and property from high wind.");
+        } else if (windspeed  >= 26 || windgust > 35) {
+            return new Risk(Risk.RiskLevel.MEDIUM, "very windy. consider delaying game");
+        } else if (windspeed  >= 21 || windgust > 30) {
+            return new Risk(Risk.RiskLevel.LOW, "windy. exercise caution");
+        }
+
+        return new Risk(Risk.RiskLevel.NONE);
     }
 
     public float getTemp() {
