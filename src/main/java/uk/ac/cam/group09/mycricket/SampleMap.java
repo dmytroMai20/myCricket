@@ -119,7 +119,7 @@ public class SampleMap extends Application {
             }
         }
         if (address.length() != 0){
-            address = address.substring(1);
+            address = address.substring(2);
         }
         locationInfo.put("Address", address);
         String[] name = ((String) map.getEngine().executeScript(
