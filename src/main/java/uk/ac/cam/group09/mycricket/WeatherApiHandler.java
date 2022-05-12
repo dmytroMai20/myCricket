@@ -18,11 +18,11 @@ public class WeatherApiHandler {
         this class will handle the api requests and then parsing the json data.
      */
     private static String apiEndPoint="https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/";
-    private static String location="";
+    private static String location="London";
     private static String startDate=null; //optional (omit for forecast)
     private static String endDate=null; //optional (requires a startDate if present)
     private static String unitGroup="metric"; //us,metric,uk
-    private static String apiKey="YOUR_API_KEY";
+    private static String apiKey="CLWNVGL8ZMZSCGUBCY2A6K7UY";
     private static URI buildReqString() throws URISyntaxException {
         StringBuilder requestBuilder=new StringBuilder(apiEndPoint);
         requestBuilder.append(location);
@@ -66,6 +66,24 @@ public class WeatherApiHandler {
         //TODO retrieve fields required for WeatherConditions class and return it as a hashmap of date time and conditions at that date(hashmap of condition names and values) i.e - "12:00:00": ("temp":11.1,"precip":21...),...
         //https://www.visualcrossing.com/weather/weather-data-services/London?v=api# api request and json response example
         //make sure to select the box "hourly"
+        HashMap<String, HashMap<String, Object>> res = new HashMap<String,HashMap<String, Object>>();
+        URI uri = null;
+        try {
+            uri = buildReqString();
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
+        try {
+            String Json = getJSON(uri);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        //JSONObject timelineResponse = new JSONObject(rawResult);
         return null;
+    }
+    public static void main(String[] args) throws URISyntaxException, IOException {
+        URI uri = buildReqString();
+        System.out.println(uri.toString());
+        System.out.println(getJSON(uri));
     }
 }
