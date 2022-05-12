@@ -118,7 +118,10 @@ public class SampleMap extends Application {
                         address2 + ", " + splitMarkerText[i].strip().replaceAll("&#x27;","'");
             }
         }
-        locationInfo.put("Address", address.substring(1));
+        if (address.length() != 0){
+            address = address.substring(1);
+        }
+        locationInfo.put("Address", address);
         String[] name = ((String) map.getEngine().executeScript(
                 "returnMarkerName();")).split(",");
         String country = name[name.length-1];
