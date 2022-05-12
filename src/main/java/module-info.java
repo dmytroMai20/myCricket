@@ -9,4 +9,6 @@ module uk.ac.cam.group09.mycricket {
 
     opens uk.ac.cam.group09.mycricket to javafx.fxml;
     exports uk.ac.cam.group09.mycricket;
+    exports uk.ac.cam.group09.mycricket.controllers;
+    opens uk.ac.cam.group09.mycricket.controllers to javafx.fxml;
 }
