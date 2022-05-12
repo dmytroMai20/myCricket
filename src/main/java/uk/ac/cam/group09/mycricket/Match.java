@@ -30,4 +30,13 @@ public class Match{
         return matchName;
     }
 
+    public Match(HashMap<String,String> locationInfo, String matchName,
+                 LocalDateTime dateTime){
+        this.locationInfo = locationInfo;
+        this.matchName = matchName;
+        this.dateTime = dateTime;
+        this.weather = Weather.getWeather(locationInfo.get("Longitude"),
+                locationInfo.get("Latitude"), dateTime);
+    }
+
 }

@@ -2,8 +2,8 @@ package uk.ac.cam.group09.mycricket;
 
 public class Main {
     public static void exampleRetrieveWeather(){    //example method to see how to retrieve certain conditions at a certain time
-        WeatherConditions weather = Weather.getWeather("london","15/05/2022", "12:00:00");
-        weather.getTemp();  //returns temperature
+        //WeatherConditions weather = Weather.getWeather("london","15/05/2022", "12:00:00");
+        //weather.getTemp();  //returns temperature
 
     }
     /*
