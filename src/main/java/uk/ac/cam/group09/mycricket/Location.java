@@ -1,5 +1,6 @@
 package uk.ac.cam.group09.mycricket;
 
+import java.time.LocalDateTime;
 import java.util.HashMap;
 
 public class Location{
@@ -17,5 +18,14 @@ public class Location{
 
     public String getLocationName(){
         return locationName;
+    }
+
+    public Location(HashMap<String,String> locationInfo, String locationName){
+        this.locationInfo = locationInfo;
+        this.locationName = locationName;
+        LocalDateTime currentDate = java.time.LocalDateTime.now();
+        this.weather = Weather.getWeather(locationInfo.get("Longitude"),
+                locationInfo.get("Latitude"), currentDate);
+
     }
 }
