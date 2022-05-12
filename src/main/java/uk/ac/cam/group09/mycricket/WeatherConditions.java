@@ -24,21 +24,35 @@ public class WeatherConditions {
         | 31-35 |  > 50%   |   high   | uncomfortable for most. increase drink breaks, batters esp. be wary
         | 35-37 |  > 30%   | v. high  | consider reducing overs or delaying game
         |  37+  |  > 30%   |  extreme | players should leave the field
+        */
 
-        UV
-        | uvindex | severrisk | message
+        if (24 <= temp && temp < 28) {
+            if (humidity > 0.7) {
 
-        Rainfall
-        | precip | message
+            }
+        } else if (28 <= temp && temp < 31) {
+            if (humidity > 0.6) {
 
-        Visibility
-        | visibility | message
+            }
+        } else if (31 <= temp && temp < 35) {
+            if (humidity > 0.5) {
 
-        Wind
-        | windgust | windspeed | message
+            }
+        } else if (35 <= temp && temp < 37) {
+            if (humidity > 0.3) {
 
-        Conditions: (if snowy etc. then...)
-         */
+            }
+        } else if (37 <= temp) {
+            if (humidity > 0.3) {
+                return false;
+            }
+        }
+
+
+        /* Rainfall */
+        if (conditions.contains("Rain")) {
+            return false;
+        }
         return true;
     }
     public void setData(HashMap<String,Object> data){
