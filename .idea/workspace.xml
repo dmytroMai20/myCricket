@@ -5,20 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5fd77470-896b-42b0-9e3e-5328f4f16f2e" name="Changes" comment="handling exceptions">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/uk/ac/cam/group09/mycricket/fav-card-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/uk/ac/cam/group09/mycricket/watch-card-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/CricketApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/CricketApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/controllers/FavController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/controllers/FavController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/controllers/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/controllers/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/controllers/NewFavController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/controllers/NewFavController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/controllers/NewWatchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/controllers/NewWatchController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/uk/ac/cam/group09/mycricket/fav-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/uk/ac/cam/group09/mycricket/fav-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/uk/ac/cam/group09/mycricket/home-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/uk/ac/cam/group09/mycricket/home-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/uk/ac/cam/group09/mycricket/new-fav-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/uk/ac/cam/group09/mycricket/new-fav-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/uk/ac/cam/group09/mycricket/new-watch-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/uk/ac/cam/group09/mycricket/new-watch-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/WeatherApiHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/WeatherApiHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +46,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "/Users/kate/IdeaProjects/myCricket/src/main/resources/uk/ac/cam/group09/mycricket",
     "project.structure.last.edited": "Facets",
     "project.structure.proportion": "0.0",
@@ -72,7 +62,7 @@
       <recent name="H:\My Drive\CST Part IA\Interaction Design\myCricket\src\main\java\uk\ac\cam\group09\mycricket" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.CricketApp">
+  <component name="RunManager" selected="Application.uk.ac.cam.group09.mycricket.WeatherApiHandler">
     <configuration name="CricketApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="uk.ac.cam.group09.mycricket.CricketApp" />
       <module name="myCricketJavaFX" />
@@ -137,9 +127,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.uk.ac.cam.group09.mycricket.WeatherApiHandler" />
         <item itemvalue="Application.CricketApp" />
         <item itemvalue="Application.SampleMap" />
-        <item itemvalue="Application.uk.ac.cam.group09.mycricket.WeatherApiHandler" />
         <item itemvalue="Application.uk.ac.cam.group09.mycricket.HelloApplication" />
       </list>
     </recent_temporary>
@@ -156,6 +146,7 @@
       <workItem from="1652189881298" duration="2135000" />
       <workItem from="1652192081938" duration="2876000" />
       <workItem from="1652361368144" duration="326000" />
+      <workItem from="1652399497898" duration="889000" />
     </task>
     <task id="LOCAL-00001" summary="Test commit / update gitignore (exclude runConfigurations.xml)">
       <created>1652190396299</created>

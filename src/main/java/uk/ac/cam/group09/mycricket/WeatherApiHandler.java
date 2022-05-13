@@ -13,6 +13,8 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 
+
+
 public class WeatherApiHandler {
     /*
         this class will handle the api requests and then parsing the json data.
