@@ -7,8 +7,8 @@ public class Weather {
 
     public static WeatherConditions getWeather(String longitude, String latitude, LocalDateTime dateTime){
         //String handling to get the data in the required form.
-        String latAndLong = latitude + "," + longitude;
-        String month = dateTime.getMonth().toString();
+        String latAndLong = latitude + "%2C" + longitude;
+        String month = Integer.toString(dateTime.getMonthValue());
         if (month.length() == 1){
             month = "0" + month;
         }
@@ -16,12 +16,11 @@ public class Weather {
         if (day.length() == 1){
             day = "0" + day;
         }
-        String date = dateTime.getYear() + "-" + month + day;
+        String date = dateTime.getYear() + "-" + month +"-"+ day;
         String hour = "" + dateTime.getHour();
         if (hour.length() == 1){
             hour = "0" + hour;
         }
-
 
         //Requesting data from the API handler, creating a new weather
         // conditions object with this data.

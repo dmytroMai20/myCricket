@@ -13,6 +13,7 @@ public class WeatherConditions {
     private String conditions;
 
     public WeatherConditions(HashMap<String,Object> data){ //constructor
+        datetime = data.get("datetime").toString();
         temp = (float)data.get("temp");
         humidity = (float)data.get("humidity");
         precip = (float)data.get("precip");

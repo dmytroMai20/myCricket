@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.charset.Charset;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import org.apache.http.*;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -19,13 +21,10 @@ public class WeatherApiHandler {
     /*
         this class will handle the api requests and then parsing the json data.
      */
-    private static String apiEndPoint="https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/";
-    //private static String location="London";
-    private static String startDate=null; //optional (omit for forecast)
-    private static String endDate=null; //optional (requires a startDate if present)
-    private static String unitGroup="metric"; //us,metric,uk
-    private static String apiKey="CLWNVGL8ZMZSCGUBCY2A6K7UY";
-    private static String include = "hours";
+    private final static String apiEndPoint="https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/";
+    private final static String unitGroup="metric"; //us,metric,uk
+    private final static String apiKey="CLWNVGL8ZMZSCGUBCY2A6K7UY";
+    private final static String include = "hours";
     private static URI buildReqString(String date, String location) throws URISyntaxException {
         StringBuilder requestBuilder=new StringBuilder(apiEndPoint);
         requestBuilder.append(location);
@@ -36,9 +35,6 @@ public class WeatherApiHandler {
                 .setParameter("include", include)
                 .setParameter("key", apiKey);
         return builder.build();
-        //if ("GET".equals(method)) {
-        //    requestBuilder.append("?").append(paramBuilder);
-        //}
     }
     private static String getJSON(URI uri) throws IOException {
         HttpGet get = new HttpGet(uri);
@@ -84,15 +80,31 @@ public class WeatherApiHandler {
         JSONArray hours = day.getJSONArray("hours");
         for (int i = 0; i < hours.length();i++){
             JSONObject hour = hours.getJSONObject(i);
-            System.out.println(hour.toString());
+            HashMap<String,Object> hourlyCond = new HashMap<String,Object>();
+            hourlyCond.put("datetime",hour.getString("datetime"));
+            hourlyCond.put("temp",hour.getFloat("temp"));
+            hourlyCond.put("precip",hour.getFloat("precip"));
+            hourlyCond.put("precipprob",hour.getFloat("precipprob"));
+            hourlyCond.put("humidity",hour.getFloat("humidity"));
+            hourlyCond.put("snow",hour.getFloat("snow"));
+            hourlyCond.put("windgust",hour.getFloat("windgust"));
+            hourlyCond.put("windspeed",hour.getFloat("windspeed"));
+            hourlyCond.put("visibility",hour.getFloat("visibility"));
+            hourlyCond.put("uvindex",hour.getFloat("uvindex"));
+            hourlyCond.put("severerisk",hour.getFloat("severerisk"));
+            res.put(hour.getString("datetime"), hourlyCond);
         }
 
-        return null;
+        return res;
     }
-    public static void main(String[] args) throws URISyntaxException, IOException {
-        //URI uri = buildReqString("2022-05-14");
-        //System.out.println(uri.toString());
-        //System.out.println(getJSON(uri));
-        getData("London", "2022-05-14");
+    public static void main(String[] args) {
+        //Example forecast for tomorrow 12:00:00
+        LocalDateTime date = LocalDateTime.now();
+        date = LocalDateTime.of(2022,5,14,12,0,0);
+        WeatherConditions weatherConds = Weather.getWeather("0.1276","51.5072",date);
+        System.out.println(weatherConds.getTemp());
+        System.out.println(weatherConds.goodToPlay());
+
+
     }
 }
