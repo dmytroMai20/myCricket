@@ -12,7 +12,7 @@ import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
-
+import org.json.*;
 
 
 public class WeatherApiHandler {
@@ -20,23 +20,20 @@ public class WeatherApiHandler {
         this class will handle the api requests and then parsing the json data.
      */
     private static String apiEndPoint="https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/";
-    private static String location="London";
+    //private static String location="London";
     private static String startDate=null; //optional (omit for forecast)
     private static String endDate=null; //optional (requires a startDate if present)
     private static String unitGroup="metric"; //us,metric,uk
     private static String apiKey="CLWNVGL8ZMZSCGUBCY2A6K7UY";
-    private static URI buildReqString() throws URISyntaxException {
+    private static String include = "hours";
+    private static URI buildReqString(String date, String location) throws URISyntaxException {
         StringBuilder requestBuilder=new StringBuilder(apiEndPoint);
         requestBuilder.append(location);
-
-        if (startDate!=null && !startDate.isEmpty()) {
-            requestBuilder.append("/").append(startDate);
-            if (endDate!=null && !endDate.isEmpty()) {
-                requestBuilder.append("/").append(endDate);
-            }
-        }
+        requestBuilder.append("/").append(date);
+        requestBuilder.append("/").append(date);
         URIBuilder builder = new URIBuilder(requestBuilder.toString());
         builder.setParameter("unitGroup", unitGroup)
+                .setParameter("include", include)
                 .setParameter("key", apiKey);
         return builder.build();
         //if ("GET".equals(method)) {
@@ -69,23 +66,33 @@ public class WeatherApiHandler {
         //https://www.visualcrossing.com/weather/weather-data-services/London?v=api# api request and json response example
         //make sure to select the box "hourly"
         HashMap<String, HashMap<String, Object>> res = new HashMap<String,HashMap<String, Object>>();
+        String Json = "";
         URI uri = null;
         try {
-            uri = buildReqString();
+            uri = buildReqString(dateTime, location);
         } catch (URISyntaxException e) {
             e.printStackTrace();
         }
         try {
-            String Json = getJSON(uri);
+            Json = getJSON(uri);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        //JSONObject timelineResponse = new JSONObject(rawResult);
+        JSONObject timelineResponse = new JSONObject(Json);
+        JSONArray values=timelineResponse.getJSONArray("days");
+        JSONObject day = values.getJSONObject(0);
+        JSONArray hours = day.getJSONArray("hours");
+        for (int i = 0; i < hours.length();i++){
+            JSONObject hour = hours.getJSONObject(i);
+            System.out.println(hour.toString());
+        }
+
         return null;
     }
     public static void main(String[] args) throws URISyntaxException, IOException {
-        URI uri = buildReqString();
-        System.out.println(uri.toString());
-        System.out.println(getJSON(uri));
+        //URI uri = buildReqString("2022-05-14");
+        //System.out.println(uri.toString());
+        //System.out.println(getJSON(uri));
+        getData("London", "2022-05-14");
     }
 }
