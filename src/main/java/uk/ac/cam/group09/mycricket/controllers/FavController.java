@@ -71,19 +71,38 @@ public class FavController {
 
         VBox mainContainer = (VBox) card.getChildren().get(0);
         HBox titleBox = (HBox) mainContainer.getChildren().get(0);
+        VBox contentBox = (VBox) mainContainer.getChildren().get(1);
         VBox meta = (VBox) titleBox.getChildren().get(0);
+        HBox contentFirstLine = (HBox) contentBox.getChildren().get(1);
+        HBox contentSecondLine = (HBox) contentBox.getChildren().get(2);
 
         Label title = (Label) meta.getChildren().get(0);
         Label time = (Label) meta.getChildren().get(1);
         Label temperature = (Label) titleBox.getChildren().get(1);
+        // Label conditions = (Label) contentBox.getChildren().get(0);
+        Label precipProb = (Label) ((VBox) contentFirstLine.getChildren().get(0)).getChildren().get(1);
+        Label windSpeed = (Label) ((VBox) contentFirstLine.getChildren().get(1)).getChildren().get(1);
+        Label humidity = (Label) ((VBox) contentFirstLine.getChildren().get(2)).getChildren().get(1);
+        Label precip = (Label) ((VBox) contentSecondLine.getChildren().get(0)).getChildren().get(1);
+        Label windGust = (Label) ((VBox) contentSecondLine.getChildren().get(1)).getChildren().get(1);
+        Label uvIndex = (Label) ((VBox) contentSecondLine.getChildren().get(2)).getChildren().get(1);
+        Label riskMessage = (Label) contentBox.getChildren().get(3);
 
         // add the CardManager object to the cardManagerList
         cardManagerList.add(cardManager);
 
-        // TODO: bind the relevant fields with their corresponding properties
+        // bind the relevant fields with their corresponding properties
         title.textProperty().bind(cardManager.getTitle());
         time.textProperty().bind(cardManager.getTime());
         temperature.textProperty().bind(cardManager.getTemperature());
+        // conditions.textProperty().bind(cardManager.getConditions());
+        precipProb.textProperty().bind(cardManager.getPrecipProb());
+        windSpeed.textProperty().bind(cardManager.getWindSpeed());
+        humidity.textProperty().bind(cardManager.getHumidity());
+        precip.textProperty().bind(cardManager.getPrecip());
+        windGust.textProperty().bind(cardManager.getWindGust());
+        uvIndex.textProperty().bind(cardManager.getUvIndex());
+        riskMessage.textProperty().bind(cardManager.getRiskMessage());
 
         // setting the color of the card based on risk level
         if (cardManager.getRiskLevel().getValue().equals(2)) {
