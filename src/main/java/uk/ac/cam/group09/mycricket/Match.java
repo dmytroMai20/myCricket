@@ -26,6 +26,10 @@ public class Match{
                 "/" + dateTime.getYear();
     }
 
+    public String getTime() {
+        return dateTime.toString();
+    }
+
     public String getMatchName(){
         return matchName;
     }

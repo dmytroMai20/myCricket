@@ -81,17 +81,30 @@ public class WeatherApiHandler {
         for (int i = 0; i < hours.length();i++){
             JSONObject hour = hours.getJSONObject(i);
             HashMap<String,Object> hourlyCond = new HashMap<String,Object>();
+
             hourlyCond.put("datetime",hour.getString("datetime"));
-            hourlyCond.put("temp",hour.getFloat("temp"));
-            hourlyCond.put("precip",hour.getFloat("precip"));
-            hourlyCond.put("precipprob",hour.getFloat("precipprob"));
-            hourlyCond.put("humidity",hour.getFloat("humidity"));
-            hourlyCond.put("snow",hour.getFloat("snow"));
-            hourlyCond.put("windgust",hour.getFloat("windgust"));
-            hourlyCond.put("windspeed",hour.getFloat("windspeed"));
-            hourlyCond.put("visibility",hour.getFloat("visibility"));
-            hourlyCond.put("uvindex",hour.getFloat("uvindex"));
-            hourlyCond.put("severerisk",hour.getFloat("severerisk"));
+            String[] keys = new String[] {
+                    "temp",
+                    "precip",
+                    "precipprob",
+                    "humidity",
+                    "snow",
+                    "windgust",
+                    "windspeed",
+                    "visibility",
+                    "uvindex",
+                    "severerisk"
+            };
+            for (String key : keys) {
+                try {
+                    hourlyCond.put(key,hour.getFloat(key));
+                }
+                catch (Exception e) {
+                    System.out.println("Exception occured when processing" + key);
+                    hourlyCond.put(key,0.0f);
+                }
+            }
+
             res.put(hour.getString("datetime"), hourlyCond);
         }
 

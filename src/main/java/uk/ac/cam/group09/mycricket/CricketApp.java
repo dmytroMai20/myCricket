@@ -24,7 +24,7 @@ public class CricketApp extends Application {
         dialogStage.initOwner(stage);
 
         HomeController homeController = fxmlLoader.getController();
-        homeController.setUp(stage, scene, scene2, dialogStage);
+        homeController.setUp(stage, scene, scene2);
 
         FavController favController = fxmlLoader2.getController();
         favController.setUp(stage, scene, scene2, dialogStage);

@@ -9,6 +9,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
+import javafx.scene.Scene;
+import uk.ac.cam.group09.mycricket.Match;
+import uk.ac.cam.group09.mycricket.Weather;
+import uk.ac.cam.group09.mycricket.WeatherConditions;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -17,7 +21,7 @@ import java.util.HashMap;
 
 public class NewWatchController {
 
-    private Stage dialogStage;
+    private Stage mainStage;
     private HomeController homeController;
 
     @FXML TextField titleTextField;
@@ -27,8 +31,8 @@ public class NewWatchController {
     @FXML WebView webView;
     @FXML Label promptLabel;
 
-    public void setUp(Stage dialogStage, HomeController homeController) {
-        this.dialogStage = dialogStage;
+    public void setUp(Stage mainStage, HomeController homeController) {
+        this.mainStage = mainStage;
         this.homeController = homeController;
         initialize();
     }
@@ -164,11 +168,7 @@ public class NewWatchController {
             int minute = Integer.parseInt((String) minChoiceBox.getValue());
             LocalDateTime dateTime = datePicker.getValue().atTime(hour, minute);
 
-            // TODO: hand the backroom the relevant info and receive the relevant info
-            // TODO: hand the front stage the parsed info
-            // homeController.addNewCard(info);
-            homeController.addNewCard();
-
+            homeController.addNewCard(new Match(locationInfo,name,dateTime));
             close();
         } else {
             promptLabel.setText("Please fill in all the required fields.");
@@ -177,6 +177,6 @@ public class NewWatchController {
 
     @FXML
     protected void close() {
-        dialogStage.close();
+        homeController.switchTo();
     }
 }
