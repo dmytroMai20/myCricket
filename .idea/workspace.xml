@@ -8,7 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/CricketApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/CricketApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/Match.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/Match.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/MatchHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/MatchHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/WeatherApiHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/WeatherApiHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/controllers/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/controllers/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/controllers/NewWatchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/controllers/NewWatchController.java" afterDir="false" />
     </list>

@@ -8,6 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
+import uk.ac.cam.group09.mycricket.CardManager;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -146,9 +147,10 @@ public class NewFavController {
             }
 
             // TODO: hand the backroom the relevant info
-            // TODO: hand the front stage the relevant info
-            // favController.addNewCard(info);
-            favController.addNewCard();
+            CardManager cardManager = new CardManager(locationInfo, name);
+
+            // TODO: hand the front stage the relevant info (the cardManager)
+            favController.addNewCard(cardManager);
 
             close();
 

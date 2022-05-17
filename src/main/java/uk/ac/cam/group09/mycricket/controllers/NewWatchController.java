@@ -11,7 +11,6 @@ import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import uk.ac.cam.group09.mycricket.Match;
-import uk.ac.cam.group09.mycricket.MatchHandler;
 import uk.ac.cam.group09.mycricket.Weather;
 import uk.ac.cam.group09.mycricket.WeatherConditions;
 
@@ -169,9 +168,7 @@ public class NewWatchController {
             int minute = Integer.parseInt((String) minChoiceBox.getValue());
             LocalDateTime dateTime = datePicker.getValue().atTime(hour, minute);
 
-            Match match = new Match(locationInfo,name,dateTime);
-            MatchHandler.addMatch(match);
-            homeController.addMatch(match);
+            homeController.addNewCard(new Match(locationInfo,name,dateTime));
             close();
         } else {
             promptLabel.setText("Please fill in all the required fields.");

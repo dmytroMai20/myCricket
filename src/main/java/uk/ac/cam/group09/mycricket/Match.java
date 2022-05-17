@@ -6,7 +6,7 @@ import javafx.beans.property.StringProperty;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 
-public class Match{
+public class Match {
     public WeatherConditions weather;
     private LocalDateTime dateTime;
     private HashMap<String,String> locationInfo;
