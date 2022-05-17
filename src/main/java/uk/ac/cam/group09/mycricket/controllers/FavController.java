@@ -19,16 +19,15 @@ public class FavController {
     private Stage mainStage;
     private Scene homeView;
     private Scene favView;
-    private Stage dialogStage;
     private LinkedList<CardManager> cardManagerList;
 
     @FXML private VBox favCardBox;
 
-    public void setUp(Stage mainStage, Scene homeView, Scene favView, Stage dialogStage) {
+    public void setUp(Stage mainStage, Scene homeView, Scene favView) {
         this.mainStage = mainStage;
         this.homeView = homeView;
         this.favView = favView;
-        this.dialogStage = dialogStage;
+        this.cardManagerList = new LinkedList<>();
     }
 
     @FXML
@@ -36,8 +35,12 @@ public class FavController {
         for (CardManager cardManager : cardManagerList) {
             cardManager.refresh();
         }
-
         mainStage.setScene(homeView);
+        mainStage.show();
+    }
+
+    protected void switchBack() {
+        mainStage.setScene(favView);
         mainStage.show();
     }
 
@@ -46,37 +49,31 @@ public class FavController {
         FXMLLoader fxmlLoader = new FXMLLoader(CricketApp.class.getResource("new-fav-view.fxml"));
         Scene newFav = new Scene(fxmlLoader.load());
         NewFavController newFavController = fxmlLoader.getController();
-        newFavController.setUp(dialogStage, this);
+        newFavController.setUp(this);
 
-        dialogStage.setScene(newFav);
-        dialogStage.show();
+        mainStage.setScene(newFav);
+        mainStage.show();
     }
 
     protected void addNewCard(CardManager cardManager) throws IOException {
-        // TODO: rewrite method signature as addNewCard(Info info)?
         // load a new Node object representing a card
         FXMLLoader fxmlLoader = new FXMLLoader(CricketApp.class.getResource("fav-card-view.fxml"));
         AnchorPane card = fxmlLoader.load();
 
         VBox mainContainer = (VBox) card.getChildren().get(0);
         HBox titleBox = (HBox) mainContainer.getChildren().get(0);
-
         VBox meta = (VBox) titleBox.getChildren().get(0);
-        Label temperature = (Label) titleBox.getChildren().get(1);
 
         Label title = (Label) meta.getChildren().get(0);
-
         Label time = (Label) meta.getChildren().get(1);
+        Label temperature = (Label) titleBox.getChildren().get(1);
 
-        Label location = (Label) meta.getChildren().get(2);
-
-        // TODO: add the Info object to the cardManager <List>
+        // add the CardManager object to the cardManagerList
         cardManagerList.add(cardManager);
 
         // TODO: bind the relevant fields with their corresponding properties
         title.textProperty().bind(cardManager.getTitle());
         time.textProperty().bind(cardManager.getTime());
-        location.textProperty().bind(cardManager.getLocation());
         temperature.textProperty().bind(cardManager.getTemperature());
 
         // add the card to the cardBox

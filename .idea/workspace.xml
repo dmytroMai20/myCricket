@@ -4,13 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5fd77470-896b-42b0-9e3e-5328f4f16f2e" name="Changes" comment="receiving json, splitting it into array of days and then hours">
+    <list default="true" id="5fd77470-896b-42b0-9e3e-5328f4f16f2e" name="Changes" comment="partially implemented CardManager">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/CardManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/CardManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/CricketApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/CricketApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/Match.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/Match.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/WeatherApiHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/WeatherApiHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/controllers/FavController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/controllers/FavController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/controllers/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/controllers/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/controllers/NewFavController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/controllers/NewFavController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/controllers/NewWatchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/controllers/NewWatchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/uk/ac/cam/group09/mycricket/fav-card-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/uk/ac/cam/group09/mycricket/fav-card-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/uk/ac/cam/group09/mycricket/watch-card-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/uk/ac/cam/group09/mycricket/watch-card-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,7 +213,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652402062152</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="partially implemented CardManager">
+      <created>1652798102385</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1652798102385</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,7 +247,8 @@
     <MESSAGE value="creating URI using builder and getting json response" />
     <MESSAGE value="handling exceptions" />
     <MESSAGE value="receiving json, splitting it into array of days and then hours" />
-    <option name="LAST_COMMIT_MESSAGE" value="receiving json, splitting it into array of days and then hours" />
+    <MESSAGE value="partially implemented CardManager" />
+    <option name="LAST_COMMIT_MESSAGE" value="partially implemented CardManager" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

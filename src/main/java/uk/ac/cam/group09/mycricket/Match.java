@@ -4,6 +4,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 
 public class Match {
@@ -31,13 +32,14 @@ public class Match {
     }
 
     public String getTime() {
-        return dateTime.toString();
+        return dateTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
     }
 
     public String getMatchName(){
         return matchName;
     }
 
+    /** Constructor for regular Match */
     public Match(HashMap<String,String> locationInfo, String matchName,
                  LocalDateTime dateTime){
         this.locationInfo = locationInfo;
@@ -45,7 +47,6 @@ public class Match {
         this.dateTime = dateTime;
         this.weather = Weather.getWeather(locationInfo.get("Longitude"),
                 locationInfo.get("Latitude"), dateTime);
-
     }
 
     /** Constructor for Favourite */
@@ -56,7 +57,6 @@ public class Match {
         this.dateTime = LocalDateTime.now();
         this.weather = Weather.getWeather(locationInfo.get("Longitude"),
                 locationInfo.get("Latitude"), dateTime);
-
     }
 
     public WeatherConditions getWeather() {
@@ -65,11 +65,11 @@ public class Match {
     }
 
     public void update() {
+        // if this is a Fav, update the dateTime to the current time
         if (!isMatch) {
             this.dateTime = LocalDateTime.now();
         }
         this.weather = Weather.getWeather(locationInfo.get("Longitude"),
                 locationInfo.get("Latitude"), dateTime);
     }
-
 }

@@ -19,28 +19,22 @@ public class CricketApp extends Application {
         FXMLLoader fxmlLoader2 = new FXMLLoader(CricketApp.class.getResource("fav-view.fxml"));
         Scene scene2 = new Scene(fxmlLoader2.load());
 
-        Stage dialogStage = new Stage();
-        dialogStage.initModality(Modality.APPLICATION_MODAL);
-        dialogStage.initOwner(stage);
-
         HomeController homeController = fxmlLoader.getController();
         homeController.setUp(stage, scene, scene2);
 
         FavController favController = fxmlLoader2.getController();
-        favController.setUp(stage, scene, scene2, dialogStage);
+        favController.setUp(stage, scene, scene2);
 
         // initialize to home
+        // TODO: set minimum size of the stage
         stage.setScene(scene);
         stage.setTitle("Cricket Weather App");
         stage.show();
 
         /*
-        FXMLLoader fxmlLoader2 = new FXMLLoader(HelloApplication.class.getResource("home-view.fxml"));
-        Scene secondScene = new Scene(fxmlLoader2.load());
-        Stage secondStage = new Stage();
-        secondStage.setScene(secondScene); // set the second scene
-        secondStage.setTitle("Second Form");
-        secondStage.show();
+        Stage dialogStage = new Stage();
+        dialogStage.initModality(Modality.APPLICATION_MODAL);
+        dialogStage.initOwner(stage);
         */
     }
 
