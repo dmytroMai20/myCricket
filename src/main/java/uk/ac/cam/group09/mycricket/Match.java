@@ -1,5 +1,8 @@
 package uk.ac.cam.group09.mycricket;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 import java.time.LocalDateTime;
 import java.util.HashMap;
 
@@ -8,6 +11,8 @@ public class Match{
     private LocalDateTime dateTime;
     private HashMap<String,String> locationInfo;
     private String matchName;
+
+    public StringProperty temperature = new SimpleStringProperty();
 
     public String getCountry(){
         return locationInfo.get("Country");
@@ -41,6 +46,14 @@ public class Match{
         this.dateTime = dateTime;
         this.weather = Weather.getWeather(locationInfo.get("Longitude"),
                 locationInfo.get("Latitude"), dateTime);
+
+        this.temperature.set(Integer.toString(Math.round(this.weather.getTemp())) + '˚');
+    }
+
+    public void update() {
+        this.weather = Weather.getWeather(locationInfo.get("Longitude"),
+                locationInfo.get("Latitude"), dateTime);
+        this.temperature.set(Integer.toString(Math.round(this.weather.getTemp())) + '˚');
     }
 
 }

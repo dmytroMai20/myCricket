@@ -34,8 +34,6 @@ public class CricketApp extends Application {
         stage.setTitle("Cricket Weather App");
         stage.show();
 
-
-
         /*
         FXMLLoader fxmlLoader2 = new FXMLLoader(HelloApplication.class.getResource("home-view.fxml"));
         Scene secondScene = new Scene(fxmlLoader2.load());

@@ -9,10 +9,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import uk.ac.cam.group09.mycricket.CricketApp;
-import uk.ac.cam.group09.mycricket.Match;
-import uk.ac.cam.group09.mycricket.Weather;
-import uk.ac.cam.group09.mycricket.WeatherConditions;
+import uk.ac.cam.group09.mycricket.*;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -28,10 +25,10 @@ public class HomeController {
             this.match = match;
         }
 
+        // Should call only once
         AnchorPane getCard() throws java.io.IOException {
 
             // Get WeatherCondition
-            WeatherConditions weatherCond =  this.match.weather;
 
             // Create card
             FXMLLoader fxmlLoader = new FXMLLoader(CricketApp.class.getResource("watch-card-view.fxml"));
@@ -39,22 +36,15 @@ public class HomeController {
 
             VBox mainContainer = (VBox) card.getChildren().get(0);
             HBox titleBox = (HBox) mainContainer.getChildren().get(0);
-
             VBox meta = (VBox) titleBox.getChildren().get(0);
-
-
             Label title = (Label) meta.getChildren().get(0);
             title.setText(this.match.getMatchName());
-
             Label time = (Label) meta.getChildren().get(1);
             time.setText(this.match.getTime());
-
             Label location = (Label) meta.getChildren().get(2);
             location.setText(this.match.getAddress());
-
             Label temperature = (Label) titleBox.getChildren().get(1);
-            String temperature_value = Math.round(weatherCond.getTemp()) + "˚";
-            temperature.setText(temperature_value);
+            temperature.textProperty().bind(match.temperature);
 
             return card;
         }
@@ -72,21 +62,15 @@ public class HomeController {
     @FXML
     protected void switchToFav() {
         mainStage.setScene(favView);
+        for (Match match : MatchHandler.getMatches()) {
+            match.update();
+        }
         mainStage.show();
     }
 
     @FXML
     public void switchTo() {
         mainStage.setScene(homeView);
-        watchCardBox.getChildren().clear();
-        try {
-            for (WatchCard card : watchCards) {
-                watchCardBox.getChildren().add(card.getCard());
-            }
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
         mainStage.show();
     }
 
@@ -105,7 +89,9 @@ public class HomeController {
         // #dialogStage.show();
     }
 
-    protected void addNewCard(Match match) throws IOException {
-        watchCards.add(new WatchCard(match));
+    public void addMatch(Match match) throws IOException {
+        WatchCard wc = new WatchCard(match);
+        watchCards.add(wc);
+        watchCardBox.getChildren().add(wc.getCard());
     }
 }
