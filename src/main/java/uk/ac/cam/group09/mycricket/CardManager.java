@@ -22,7 +22,7 @@ public class CardManager {
         this.title = new SimpleStringProperty(match.getMatchName());
         this.time = new SimpleStringProperty(match.getTime());
         this.location = new SimpleStringProperty(match.getAddress());
-        this.temperature = new SimpleStringProperty(Math.round(match.weather.getTemp()) + "˚");
+        this.temperature = new SimpleStringProperty(Math.round(match.getWeather().getTemp()) + "˚");
     }
 
     // Case where it is called by a new fav

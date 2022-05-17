@@ -31,7 +31,7 @@ public class HomeController {
         AnchorPane getCard() throws java.io.IOException {
 
             // Get WeatherCondition
-            WeatherConditions weatherCond =  this.match.weather;
+            WeatherConditions weatherCond =  this.match.getWeather();
 
             // Create card
             FXMLLoader fxmlLoader = new FXMLLoader(CricketApp.class.getResource("watch-card-view.fxml"));

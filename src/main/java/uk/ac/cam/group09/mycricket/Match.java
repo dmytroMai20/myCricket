@@ -7,12 +7,11 @@ import java.time.LocalDateTime;
 import java.util.HashMap;
 
 public class Match {
-    public WeatherConditions weather;
+    private WeatherConditions weather;
     private LocalDateTime dateTime;
     private HashMap<String,String> locationInfo;
     private String matchName;
-
-    public StringProperty temperature = new SimpleStringProperty();
+    private Boolean isMatch = Boolean.TRUE;
 
     public String getCountry(){
         return locationInfo.get("Country");
@@ -47,13 +46,30 @@ public class Match {
         this.weather = Weather.getWeather(locationInfo.get("Longitude"),
                 locationInfo.get("Latitude"), dateTime);
 
-        this.temperature.set(Integer.toString(Math.round(this.weather.getTemp())) + '˚');
+    }
+
+    /** Constructor for Favourite */
+    public Match(HashMap<String,String> locationInfo, String matchName){
+        this.isMatch = Boolean.FALSE;
+        this.locationInfo = locationInfo;
+        this.matchName = matchName;
+        this.dateTime = LocalDateTime.now();
+        this.weather = Weather.getWeather(locationInfo.get("Longitude"),
+                locationInfo.get("Latitude"), dateTime);
+
+    }
+
+    public WeatherConditions getWeather() {
+        update();
+        return weather;
     }
 
     public void update() {
+        if (!isMatch) {
+            this.dateTime = LocalDateTime.now();
+        }
         this.weather = Weather.getWeather(locationInfo.get("Longitude"),
                 locationInfo.get("Latitude"), dateTime);
-        this.temperature.set(Integer.toString(Math.round(this.weather.getTemp())) + '˚');
     }
 
 }

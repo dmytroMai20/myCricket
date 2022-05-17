@@ -14,7 +14,7 @@ public class MatchHandler {
 
     public static void addMatch(Match newMatch) {
         matches.add(newMatch);
-        Risk.RiskLevel matchRisk = newMatch.weather.goodToPlay().getRisk();
+        Risk.RiskLevel matchRisk = newMatch.getWeather().goodToPlay().getRisk();
         switch (matchRisk){
             case NONE: lowRiskMatches.add(newMatch);
             case LOW: lowRiskMatches.add(newMatch);
