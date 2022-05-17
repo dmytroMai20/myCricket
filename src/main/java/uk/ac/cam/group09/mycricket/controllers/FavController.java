@@ -1,5 +1,7 @@
 package uk.ac.cam.group09.mycricket.controllers;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -13,6 +15,7 @@ import uk.ac.cam.group09.mycricket.CricketApp;
 import uk.ac.cam.group09.mycricket.MatchHandler;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.LinkedList;
 
 public class FavController {
@@ -28,6 +31,12 @@ public class FavController {
         this.homeView = homeView;
         this.favView = favView;
         this.cardManagerList = new LinkedList<>();
+
+        try {
+            exampleAddNewCard();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @FXML
@@ -76,7 +85,44 @@ public class FavController {
         time.textProperty().bind(cardManager.getTime());
         temperature.textProperty().bind(cardManager.getTemperature());
 
+        // setting the color of the card based on risk level
+        if (cardManager.getRiskLevel().getValue().equals(2)) {
+            // extreme or high risk
+            card.setStyle("-fx-background-color: #CE2029");
+        } else if (cardManager.getRiskLevel().getValue().equals(1)) {
+            // medium or low risk
+            card.setStyle("-fx-background-color: #FFB034");
+        }
+
+        // a listener method to change the color of the card based on risk level
+        cardManager.getRiskLevel().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observableValue, Number oldVal, Number newVal) {
+                if (newVal.equals(2)) {
+                    // extreme or high risk
+                    card.setStyle("-fx-background-color: #CE2029");
+                } else if (newVal.equals(1)) {
+                    // medium or low risk
+                    card.setStyle("-fx-background-color: #FFB034");
+                } else {
+                    // default: no risk
+                    card.setStyle("-fx-background-color: #679BF1");
+                }
+            }
+        });
+
         // add the card to the cardBox
         favCardBox.getChildren().add(card);
+    }
+
+    private void exampleAddNewCard() throws IOException {
+        CardManager exampleCardManager = new CardManager(new HashMap<String,String>() {{
+            put("Address", "William Gates Building J J Thomson Avenue 15, CB3 0FD Cambridge");
+            put("Country", "United Kingdom");
+            put("Latitude", "0.09202940714286707");
+            put("Longitude", "52.21093155");
+        }}, "Computer Lab");
+
+        addNewCard(exampleCardManager);
     }
 }

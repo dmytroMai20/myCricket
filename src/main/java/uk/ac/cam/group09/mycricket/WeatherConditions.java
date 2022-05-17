@@ -140,6 +140,7 @@ public class WeatherConditions {
         return uvindex;
     }
 
+    // TODO: this method somehow returns null
     public String getConditions() {
         return conditions;
     }
