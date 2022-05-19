@@ -99,15 +99,15 @@ public class WeatherConditions {
         "Breezy" to "Windy" conditions. Sustained wind speeds around 20 mph, or frequent gusts of 25 to 30 mph.
          */
 
-        if (windspeed >= 58 || windgust > 58) {
-            return new Risk(Risk.RiskLevel.EXTREME, "extreme threat to life and property from high wind.");
-        } else if (windspeed  >= 40) {
-            return new Risk(Risk.RiskLevel.HIGH, "high threat to life and property from high wind.");
-        } else if (windspeed  >= 26 || windgust > 35) {
-            return new Risk(Risk.RiskLevel.MEDIUM, "very windy. consider delaying game");
-        } else if (windspeed  >= 21 || windgust > 30) {
-            return new Risk(Risk.RiskLevel.LOW, "windy. exercise caution");
-        }
+//        if (windspeed >= 58 || windgust > 58) {
+//            return new Risk(Risk.RiskLevel.EXTREME, "extreme threat to life and property from high wind.");
+//        } else if (windspeed  >= 40) {
+//            return new Risk(Risk.RiskLevel.HIGH, "high threat to life and property from high wind.");
+//        } else if (windspeed  >= 26 || windgust > 35) {
+//            return new Risk(Risk.RiskLevel.MEDIUM, "very windy. consider delaying game");
+//        } else if (windspeed  >= 21 || windgust > 30) {
+//            return new Risk(Risk.RiskLevel.LOW, "windy. exercise caution");
+//        }
 
         return new Risk(Risk.RiskLevel.NONE);
     }
