@@ -61,7 +61,6 @@ public class CardManager {
     }
 
     public void refresh() {
-        match.update();
         time.set(match.getTime());
 
         WeatherConditions weather = match.getWeather();
