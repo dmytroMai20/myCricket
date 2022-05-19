@@ -44,7 +44,7 @@ public class WeatherConditions {
 
         if (24 <= temp && temp < 28) {
             if (humidity > 0.7) {
-                Risk risk = new Risk(Risk.RiskLevel.LOW, "Exercise caution");
+                Risk risk = new Risk(Risk.RiskLevel.LOW, "Exercise caution - high temperatures.");
                 if (risk.compareTo(maxRisk) > 0) {
                     maxRisk = risk;
                 }
@@ -73,6 +73,20 @@ public class WeatherConditions {
         } else if (37 <= temp) {
             if (humidity > 0.3) {
                 Risk risk = new Risk(Risk.RiskLevel.EXTREME, "Players should leave the field");
+                if (risk.compareTo(maxRisk) > 0) {
+                    maxRisk = risk;
+                }
+            }
+        } else if (temp <= 0) {
+            if (humidity > 0.3) {
+                Risk risk = new Risk(Risk.RiskLevel.MEDIUM, "Freezing temperatures. Exercise caution.");
+                if (risk.compareTo(maxRisk) > 0) {
+                    maxRisk = risk;
+                }
+            }
+        } else if (temp <= 0) {
+            if (humidity > 0.3) {
+                Risk risk = new Risk(Risk.RiskLevel.HIGH, "Freezing temperatures. Unsuitable playing conditions.");
                 if (risk.compareTo(maxRisk) > 0) {
                     maxRisk = risk;
                 }
