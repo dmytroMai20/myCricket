@@ -102,7 +102,6 @@ public class WeatherApiHandler {
                     hourlyCond.put(key,hour.getFloat(key));
                 }
                 catch (Exception e) {
-                    System.out.println("Exception occured when processing" + key);
                     hourlyCond.put(key,0.0f);
                 }
             }
