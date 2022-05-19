@@ -106,7 +106,7 @@ public class HomeController {
         windGust.textProperty().bind(cardManager.getWindGust());
         uvIndex.textProperty().bind(cardManager.getUvIndex());
         riskMessage.textProperty().bind(cardManager.getRiskMessage());
-
+        
         // setting the color of the card based on risk level
         if (cardManager.getRiskLevel().getValue().equals(2)) {
             // extreme or high risk
@@ -114,6 +114,9 @@ public class HomeController {
         } else if (cardManager.getRiskLevel().getValue().equals(1)) {
             // medium or low risk
             card.setStyle("-fx-background-color: #FFB034");
+        } else {
+            // default: no risk
+            card.setStyle("-fx-background-color: #679BF1");
         }
 
         // a listener method to change the color of the card based on risk level
