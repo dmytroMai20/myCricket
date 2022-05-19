@@ -19,7 +19,7 @@
                               <Font name="SF Pro Display Bold" size="24.0" />
                            </font>
                         </Label>
-                        <Label opacity="0.8" text="14:00" textFill="WHITE">
+                        <Label opacity="0.8" text="2022-05-05 14:00" textFill="WHITE">
                            <font>
                               <Font name="SF Pro Display Bold" size="13.0" />
                            </font>
@@ -33,9 +33,9 @@
                   </Label>
                </children>
             </HBox>
-            <VBox spacing="10.0">
+            <VBox alignment="TOP_CENTER" spacing="10.0">
                <children>
-                  <Label opacity="0.8" text="There might be something that you wanna fill in here..." textFill="WHITE" wrapText="true">
+                  <Label opacity="0.8" textFill="WHITE" wrapText="true">
                      <font>
                         <Font name="SF Pro Display Bold" size="13.0" />
                      </font>
@@ -132,7 +132,7 @@
                         </VBox>
                      </children>
                   </HBox>
-                  <Label opacity="0.8" text="But I'm not sure what." textFill="WHITE" wrapText="true">
+                  <Label opacity="0.8" textFill="WHITE" wrapText="true">
                      <font>
                         <Font name="SF Pro Display Bold" size="13.0" />
                      </font>

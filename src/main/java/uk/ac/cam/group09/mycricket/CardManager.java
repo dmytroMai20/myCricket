@@ -43,7 +43,7 @@ public class CardManager {
         this.windSpeed = new SimpleStringProperty(Float.toString(weather.getWindSpeed()));
         this.uvIndex = new SimpleStringProperty(Float.toString(weather.getUvIndex()));
         this.riskMessage = new SimpleStringProperty(weather.goodToPlay().getMessage());
-        this.conditions = new SimpleStringProperty(weather.getConditions());
+        this.conditions = new SimpleStringProperty("Weather: " + weather.getConditions());
 
         this.riskLevel = new SimpleIntegerProperty(0);
         Risk.RiskLevel matchRisk = weather.goodToPlay().getRisk();
@@ -62,6 +62,11 @@ public class CardManager {
     }
 
     public void refresh() {
+        // TODO: note that the match.update() has been rewritten to exclude weather updates
+        // a possibility: if the match is a fav item, update the match time (time only) periodically? Need to be up to date (ideally)
+        // all weather updates should only be run once in a while
+        match.update();
+
         time.set(match.getTime());
 
         WeatherConditions weather = match.getWeather();
@@ -73,7 +78,7 @@ public class CardManager {
         windSpeed.set(Float.toString(weather.getWindSpeed()));
         uvIndex.set(Float.toString(weather.getUvIndex()));
         riskMessage.set(weather.goodToPlay().getMessage());
-        conditions.set(weather.getConditions());
+        conditions.set("Weather: " + weather.getConditions());
 
         Risk.RiskLevel matchRisk = weather.goodToPlay().getRisk();
         switch (matchRisk){

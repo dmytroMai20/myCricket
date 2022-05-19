@@ -68,7 +68,11 @@ public class Match {
         if (!isMatch) {
             this.dateTime = LocalDateTime.now();
         }
+
+        // weather update blocked for now
+        /**
         this.weather = Weather.getWeather(locationInfo.get("Longitude"),
                 locationInfo.get("Latitude"), dateTime);
+         */
     }
 }

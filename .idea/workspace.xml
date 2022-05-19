@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5fd77470-896b-42b0-9e3e-5328f4f16f2e" name="Changes" comment="minor changes to CardManager" />
+    <list default="true" id="5fd77470-896b-42b0-9e3e-5328f4f16f2e" name="Changes" comment="binded getConditions() String to the corresponding label on UI">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/CardManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/CardManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/Match.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/cam/group09/mycricket/Match.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/uk/ac/cam/group09/mycricket/fav-card-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/uk/ac/cam/group09/mycricket/fav-card-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/uk/ac/cam/group09/mycricket/watch-card-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/uk/ac/cam/group09/mycricket/watch-card-view.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -220,7 +226,21 @@
       <option name="project" value="LOCAL" />
       <updated>1652968827398</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="added getConditions() method">
+      <created>1652969208230</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1652969208230</updated>
+    </task>
+    <task id="LOCAL-00014" summary="binded getConditions() String to the corresponding label on UI">
+      <created>1652969477584</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1652969477584</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -251,7 +271,9 @@
     <MESSAGE value="removed WatchCard static class; now addNewCard method implemented with CardManager" />
     <MESSAGE value="the card now changes color with reference to RiskLevel" />
     <MESSAGE value="minor changes to CardManager" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor changes to CardManager" />
+    <MESSAGE value="added getConditions() method" />
+    <MESSAGE value="binded getConditions() String to the corresponding label on UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="binded getConditions() String to the corresponding label on UI" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
