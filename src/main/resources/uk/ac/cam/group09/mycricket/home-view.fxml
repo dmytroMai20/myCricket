@@ -21,6 +21,11 @@
                             <Font name="SF Pro Display Bold" size="48.0" />
                         </font>
                     </Label>
+               <ImageView fitHeight="100.0" fitWidth="75.0" layoutX="309.0" layoutY="34.0" opacity="0.4" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@icons/logos/MyCricket-logos_cropped.png" />
+                  </image>
+               </ImageView>
                     <VBox fx:id="watchCardBox" layoutX="20.0" layoutY="150.0" spacing="10.0" />
                 </children>
                 <padding>
