@@ -77,19 +77,15 @@ public class WeatherConditions {
                     maxRisk = risk;
                 }
             }
-        } else if (temp <= 0) {
-            if (humidity > 0.3) {
-                Risk risk = new Risk(Risk.RiskLevel.MEDIUM, "Freezing temperatures. Exercise caution.");
-                if (risk.compareTo(maxRisk) > 0) {
-                    maxRisk = risk;
-                }
+        } else if (-5 < temp && temp <= 0) {
+            Risk risk = new Risk(Risk.RiskLevel.MEDIUM, "Freezing temperatures. Exercise caution.");
+            if (risk.compareTo(maxRisk) > 0) {
+                maxRisk = risk;
             }
-        } else if (temp <= 0) {
-            if (humidity > 0.3) {
-                Risk risk = new Risk(Risk.RiskLevel.HIGH, "Freezing temperatures. Unsuitable playing conditions.");
-                if (risk.compareTo(maxRisk) > 0) {
-                    maxRisk = risk;
-                }
+        } else if (-10 < temp && temp <= -5) {
+            Risk risk = new Risk(Risk.RiskLevel.HIGH, "Unsafe freezing temperatures. Stay inside.");
+            if (risk.compareTo(maxRisk) > 0) {
+                maxRisk = risk;
             }
         }
 
