@@ -70,7 +70,7 @@ public class NewWatchController {
                 "\n" +
                 "<div id=\"map\" style = \"height: 410px\"></div>\n" +
                 "<script>\n" +
-                "var map = L.map('map').setView([0, 0], 0);\n" +
+                "var map = L.map('map').setView([0, 0], 1);\n" +
                 "L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {\n" +
                 "attribution: '&copy; <a href=\"http://osm" +
                 ".org/copyright\">OpenStreetMap</a> contributors'\n" +
@@ -144,11 +144,12 @@ public class NewWatchController {
 
     protected boolean checkCompletion() {
         String address = getLocationInfo().get("Address");
+        String country = getLocationInfo().get("Country");
         LocalDate date = datePicker.getValue();
         String hour = (String) hourChoiceBox.getValue();
         String minute = (String) minChoiceBox.getValue();
 
-        return (!address.isEmpty()) && (date != null) && (!hour.isEmpty()) && (!minute.isEmpty());
+        return ((!address.isEmpty()) || !country.isEmpty()) && (date != null) && (!hour.isEmpty()) && (!minute.isEmpty());
     }
 
     @FXML
@@ -160,7 +161,12 @@ public class NewWatchController {
             String name = titleTextField.getText();
 
             if (name.isEmpty()) {
-                name = locationInfo.get("Address").split(",")[0];
+                if (locationInfo.get("Address").isEmpty()){
+                    name = locationInfo.get("Country");
+                }
+                else {
+                    name = locationInfo.get("Address").split(",")[0];
+                }
             }
 
             int hour = Integer.parseInt((String) hourChoiceBox.getValue());

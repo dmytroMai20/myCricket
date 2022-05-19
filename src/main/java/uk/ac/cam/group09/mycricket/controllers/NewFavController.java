@@ -50,7 +50,7 @@ public class NewFavController {
                 "\n" +
                 "<div id=\"map\" style = \"height: 453px\"></div>\n" +
                 "<script>\n" +
-                "var map = L.map('map').setView([0, 0], 0);\n" +
+                "var map = L.map('map').setView([0, 0], 1);\n" +
                 "L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {\n" +
                 "attribution: '&copy; <a href=\"http://osm" +
                 ".org/copyright\">OpenStreetMap</a> contributors'\n" +
@@ -124,7 +124,8 @@ public class NewFavController {
 
     protected boolean checkCompletion() {
         String address = getLocationInfo().get("Address");
-        return (!address.isEmpty());
+        String country = getLocationInfo().get("Country");
+        return (!address.isEmpty() || !country.isEmpty());
     }
 
     @FXML
@@ -136,7 +137,12 @@ public class NewFavController {
             String name = titleTextField.getText();
 
             if (name.isEmpty()) {
-                name = locationInfo.get("Address").split(",")[0];
+                if (locationInfo.get("Address").isEmpty()){
+                    name = locationInfo.get("Country");
+                }
+                else {
+                    name = locationInfo.get("Address").split(",")[0];
+                }
             }
 
             // TODO: hand the backroom the relevant info
