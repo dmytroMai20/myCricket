@@ -1,6 +1,7 @@
 package uk.ac.cam.group09.mycricket;
 
-public class Risk {
+public class Risk implements Comparable<Risk> {
+
     enum RiskLevel {
         NONE,
         LOW,
@@ -28,5 +29,10 @@ public class Risk {
 
     public String getMessage() {
         return message;
+    }
+
+    @Override
+    public int compareTo(Risk o) {
+        return risk.compareTo(o.risk);
     }
 }

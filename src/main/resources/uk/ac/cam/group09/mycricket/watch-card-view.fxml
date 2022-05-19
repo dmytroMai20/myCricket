@@ -40,7 +40,7 @@
             </HBox>
             <VBox spacing="10.0">
                <children>
-                  <Label opacity="0.8" text="There might be something that you wanna fill in here..." textFill="WHITE" wrapText="true">
+                  <Label opacity="0.8" text="" textFill="WHITE" wrapText="true">
                      <font>
                         <Font name="SF Pro Display Bold" size="13.0" />
                      </font>
