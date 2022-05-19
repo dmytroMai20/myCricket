@@ -67,7 +67,6 @@ public class CardManager {
 
         WeatherConditions weather = match.getWeather();
         temperature.set(Math.round(weather.getTemp()) + "˚");
-        // TODO: refresh the rest of the crew
         humidity.set(Math.round(weather.getHumidity()) + "%");
         precip.set(Float.toString(weather.getPrecip()));
         precipProb.set(Math.round(weather.getPrecipProb()) + "%");
