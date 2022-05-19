@@ -83,7 +83,7 @@ public class WeatherConditions {
             if (risk.compareTo(maxRisk) > 0) {
                 maxRisk = risk;
             }
-        } else if (-10 < temp && temp <= -5) {
+        } else if (temp <= -5) {
             Risk risk = new Risk(Risk.RiskLevel.HIGH, "Unsafe freezing temperatures. Stay inside.");
             if (risk.compareTo(maxRisk) > 0) {
                 maxRisk = risk;

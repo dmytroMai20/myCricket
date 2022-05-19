@@ -14,7 +14,7 @@ import java.util.HashMap;
 /** This is a wrapper class designed to hand over properties to the controllers */
 public class CardManager {
     private Match match;
-    private SimpleStringProperty title, time, location, temperature, humidity, precip, precipProb, windGust, windSpeed, uvIndex, riskMessage;
+    private SimpleStringProperty title, time, location, temperature, humidity, precip, precipProb, windGust, windSpeed, uvIndex, riskMessage, conditions;
     private SimpleIntegerProperty riskLevel;
 
     /** Constructor for a new watch. */
@@ -43,12 +43,13 @@ public class CardManager {
         this.windSpeed = new SimpleStringProperty(Float.toString(weather.getWindSpeed()));
         this.uvIndex = new SimpleStringProperty(Float.toString(weather.getUvIndex()));
         this.riskMessage = new SimpleStringProperty(weather.goodToPlay().getMessage());
+        this.conditions = new SimpleStringProperty(weather.getConditions());
 
         this.riskLevel = new SimpleIntegerProperty(0);
         Risk.RiskLevel matchRisk = weather.goodToPlay().getRisk();
         switch (matchRisk){
             case NONE: this.riskLevel.set(0);
-            break;
+                break;
             case LOW:
             case MEDIUM:
                 this.riskLevel.set(1);
@@ -65,7 +66,6 @@ public class CardManager {
 
         WeatherConditions weather = match.getWeather();
         temperature.set(Math.round(weather.getTemp()) + "˚");
-        // TODO: refresh the rest of the crew
         humidity.set(Math.round(weather.getHumidity()) + "%");
         precip.set(Float.toString(weather.getPrecip()));
         precipProb.set(Math.round(weather.getPrecipProb()) + "%");
@@ -73,10 +73,12 @@ public class CardManager {
         windSpeed.set(Float.toString(weather.getWindSpeed()));
         uvIndex.set(Float.toString(weather.getUvIndex()));
         riskMessage.set(weather.goodToPlay().getMessage());
+        conditions.set(weather.getConditions());
 
         Risk.RiskLevel matchRisk = weather.goodToPlay().getRisk();
         switch (matchRisk){
-            case NONE: this.riskLevel.set(0);
+            case NONE:
+                this.riskLevel.set(0);
                 break;
             case LOW:
             case MEDIUM:
@@ -108,5 +110,6 @@ public class CardManager {
     public StringProperty getWindSpeed() {return windSpeed;}
     public StringProperty getUvIndex() {return uvIndex;}
     public StringProperty getRiskMessage() {return riskMessage;}
+    public StringProperty getConditions() {return conditions;}
     public IntegerProperty getRiskLevel() {return riskLevel;}
 }
