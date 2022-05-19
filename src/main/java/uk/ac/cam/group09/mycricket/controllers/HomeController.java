@@ -81,7 +81,7 @@ public class HomeController {
         Label time = (Label) meta.getChildren().get(1);
         Label location = (Label) meta.getChildren().get(2);
         Label temperature = (Label) titleBox.getChildren().get(1);
-        // Label conditions = (Label) contentBox.getChildren().get(0);
+        Label conditions = (Label) contentBox.getChildren().get(0);
         Label precipProb = (Label) ((VBox) contentFirstLine.getChildren().get(0)).getChildren().get(1);
         Label windSpeed = (Label) ((VBox) contentFirstLine.getChildren().get(1)).getChildren().get(1);
         Label humidity = (Label) ((VBox) contentFirstLine.getChildren().get(2)).getChildren().get(1);
@@ -98,7 +98,7 @@ public class HomeController {
         time.textProperty().bind(cardManager.getTime());
         location.textProperty().bind(cardManager.getLocation());
         temperature.textProperty().bind(cardManager.getTemperature());
-        // conditions.textProperty().bind(cardManager.getConditions());
+        conditions.textProperty().bind(cardManager.getConditions());
         precipProb.textProperty().bind(cardManager.getPrecipProb());
         windSpeed.textProperty().bind(cardManager.getWindSpeed());
         humidity.textProperty().bind(cardManager.getHumidity());
