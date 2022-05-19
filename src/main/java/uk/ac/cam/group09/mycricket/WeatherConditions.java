@@ -2,6 +2,8 @@ package uk.ac.cam.group09.mycricket;
 
 import java.util.HashMap;
 
+import static java.util.Collections.max;
+
 public class WeatherConditions {
     private String datetime;
     private float temp,humidity;
@@ -38,25 +40,42 @@ public class WeatherConditions {
         |  37+  |  > 30%   |  extreme | players should leave the field
         */
 
+        Risk maxRisk = new Risk(Risk.RiskLevel.NONE, "Good playing conditions");
+
         if (24 <= temp && temp < 28) {
             if (humidity > 0.7) {
-                return new Risk(Risk.RiskLevel.LOW, "exercise caution");
+                Risk risk = new Risk(Risk.RiskLevel.LOW, "Exercise caution");
+                if (risk.compareTo(maxRisk) > 0) {
+                    maxRisk = risk;
+                }
             }
         } else if (28 <= temp && temp < 31) {
             if (humidity > 0.6) {
-                return new Risk(Risk.RiskLevel.MEDIUM, "increase vigilance and monitor players. consider increasing drink breaks");
+                Risk risk = new Risk(Risk.RiskLevel.MEDIUM, "Increase vigilance and monitor players. Consider increasing drink breaks");
+                if (risk.compareTo(maxRisk) > 0) {
+                    maxRisk = risk;
+                }
             }
         } else if (31 <= temp && temp < 35) {
             if (humidity > 0.5) {
-                return new Risk(Risk.RiskLevel.HIGH, "uncomfortable for most. increase drink breaks, batters be wary");
+                Risk risk = new Risk(Risk.RiskLevel.HIGH, "Uncomfortable for most. Increase drink breaks, batters be wary");
+                if (risk.compareTo(maxRisk) > 0) {
+                    maxRisk = risk;
+                }
             }
         } else if (35 <= temp && temp < 37) {
             if (humidity > 0.3) {
-                return new Risk(Risk.RiskLevel.HIGH, "consider reducing overs or delaying game");
+                Risk risk = new Risk(Risk.RiskLevel.HIGH, "Consider reducing overs or delaying game");
+                if (risk.compareTo(maxRisk) > 0) {
+                    maxRisk = risk;
+                }
             }
         } else if (37 <= temp) {
             if (humidity > 0.3) {
-                return new Risk(Risk.RiskLevel.EXTREME, "players should leave the field");
+                Risk risk = new Risk(Risk.RiskLevel.EXTREME, "Players should leave the field");
+                if (risk.compareTo(maxRisk) > 0) {
+                    maxRisk = risk;
+                }
             }
         }
 
@@ -67,11 +86,20 @@ public class WeatherConditions {
         Heavy rain — when the precipitation rate is greater than 10 mm (0.39 in) per hour
          */
         if (0.5 <= precip && precip < 2.5) {
-            return new Risk(Risk.RiskLevel.LOW, "consider delays until rain stops");
+            Risk risk = new Risk(Risk.RiskLevel.LOW, "Consider delays until rain stops");
+            if (risk.compareTo(maxRisk) > 0) {
+                maxRisk = risk;
+            }
         } else if (2.5 <= precip && precip < 10) {
-            return new Risk(Risk.RiskLevel.MEDIUM, "delay game until conditions improve");
+            Risk risk = new Risk(Risk.RiskLevel.MEDIUM, "Delay game until conditions improve");
+            if (risk.compareTo(maxRisk) > 0) {
+                maxRisk = risk;
+            }
         } else if (10 <= precip) {
-            return new Risk(Risk.RiskLevel.HIGH, "postpone game due to excessive rainfall");
+            Risk risk = new Risk(Risk.RiskLevel.HIGH, "Postpone game due to excessive rainfall");
+            if (risk.compareTo(maxRisk) > 0) {
+                maxRisk = risk;
+            }
         }
 
         // TODO: Check units that API returns for windspeed and windgust
@@ -99,17 +127,17 @@ public class WeatherConditions {
         "Breezy" to "Windy" conditions. Sustained wind speeds around 20 mph, or frequent gusts of 25 to 30 mph.
          */
 
-//        if (windspeed >= 58 || windgust > 58) {
-//            return new Risk(Risk.RiskLevel.EXTREME, "extreme threat to life and property from high wind.");
-//        } else if (windspeed  >= 40) {
-//            return new Risk(Risk.RiskLevel.HIGH, "high threat to life and property from high wind.");
-//        } else if (windspeed  >= 26 || windgust > 35) {
-//            return new Risk(Risk.RiskLevel.MEDIUM, "very windy. consider delaying game");
-//        } else if (windspeed  >= 21 || windgust > 30) {
-//            return new Risk(Risk.RiskLevel.LOW, "windy. exercise caution");
-//        }
+        if (windspeed >= 58*1.6 || windgust > 58*1.6) {
+            return new Risk(Risk.RiskLevel.EXTREME, "Extreme threat to life and property from high wind.");
+        } else if (windspeed  >= 40*1.6) {
+            return new Risk(Risk.RiskLevel.HIGH, "High threat to life and property from high wind.");
+        } else if (windspeed  >= 26*1.6 || windgust > 35*1.6) {
+            return new Risk(Risk.RiskLevel.MEDIUM, "Very windy. Consider delaying game");
+        } else if (windspeed  >= 21*1.6 || windgust > 30*1.6) {
+            return new Risk(Risk.RiskLevel.LOW, "Windy. Exercise caution");
+        }
 
-        return new Risk(Risk.RiskLevel.NONE);
+        return maxRisk;
     }
 
     public float getTemp() {
