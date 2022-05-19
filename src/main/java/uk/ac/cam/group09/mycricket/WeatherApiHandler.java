@@ -93,7 +93,8 @@ public class WeatherApiHandler {
                     "windspeed",
                     "visibility",
                     "uvindex",
-                    "severerisk"
+                    "severerisk",
+                    "conditions"
             };
             for (String key : keys) {
                 try {

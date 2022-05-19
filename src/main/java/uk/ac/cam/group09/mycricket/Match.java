@@ -60,7 +60,6 @@ public class Match {
     }
 
     public WeatherConditions getWeather() {
-        update();
         return weather;
     }
 
