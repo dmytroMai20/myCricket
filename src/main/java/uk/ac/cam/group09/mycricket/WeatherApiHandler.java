@@ -21,6 +21,7 @@ public class WeatherApiHandler {
     /*
         this class will handle the api requests and then parsing the json data.
      */
+    //some code used from https://www.visualcrossing.com/resources/documentation/weather-api/how-to-use-timeline-weather-api-to-retrieve-historical-weather-data-and-weather-forecast-data-in-java/
     private final static String apiEndPoint="https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/";
     private final static String unitGroup="metric"; //us,metric,uk
     //private final static String apiKey="CLWNVGL8ZMZSCGUBCY2A6K7UY";
