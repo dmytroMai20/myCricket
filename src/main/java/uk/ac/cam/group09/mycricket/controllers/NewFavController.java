@@ -1,30 +1,24 @@
 package uk.ac.cam.group09.mycricket.controllers;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
+import uk.ac.cam.group09.mycricket.CardManager;
 
 import java.io.IOException;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.HashMap;
 
 public class NewFavController {
 
-    private Stage dialogStage;
     private FavController favController;
 
     @FXML TextField titleTextField;
     @FXML WebView webView;
     @FXML Label promptLabel;
 
-    public void setUp(Stage dialogStage, FavController favController) {
-        this.dialogStage = dialogStage;
+    public void setUp(FavController favController) {
         this.favController = favController;
         initialize();
     }
@@ -146,9 +140,10 @@ public class NewFavController {
             }
 
             // TODO: hand the backroom the relevant info
-            // TODO: hand the front stage the relevant info
-            // favController.addNewCard(info);
-            favController.addNewCard();
+            CardManager cardManager = new CardManager(locationInfo, name);
+
+            // TODO: hand the front stage the relevant info (the cardManager)
+            favController.addNewCard(cardManager);
 
             close();
 
@@ -159,6 +154,6 @@ public class NewFavController {
 
     @FXML
     protected void close() {
-        dialogStage.close();
+        favController.switchBack();
     }
 }

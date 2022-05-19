@@ -10,6 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
+import uk.ac.cam.group09.mycricket.CardManager;
 import uk.ac.cam.group09.mycricket.Match;
 import uk.ac.cam.group09.mycricket.Weather;
 import uk.ac.cam.group09.mycricket.WeatherConditions;
@@ -21,7 +22,6 @@ import java.util.HashMap;
 
 public class NewWatchController {
 
-    private Stage mainStage;
     private HomeController homeController;
 
     @FXML TextField titleTextField;
@@ -31,8 +31,7 @@ public class NewWatchController {
     @FXML WebView webView;
     @FXML Label promptLabel;
 
-    public void setUp(Stage mainStage, HomeController homeController) {
-        this.mainStage = mainStage;
+    public void setUp(HomeController homeController) {
         this.homeController = homeController;
         initialize();
     }
@@ -168,7 +167,12 @@ public class NewWatchController {
             int minute = Integer.parseInt((String) minChoiceBox.getValue());
             LocalDateTime dateTime = datePicker.getValue().atTime(hour, minute);
 
-            homeController.addNewCard(new Match(locationInfo,name,dateTime));
+            // TODO: hand the backroom the relevant info
+            CardManager cardManager = new CardManager(locationInfo, name, dateTime);
+
+            // TODO: hand the front stage the relevant info (the cardManager)
+            homeController.addNewCard(cardManager);
+
             close();
         } else {
             promptLabel.setText("Please fill in all the required fields.");
@@ -177,6 +181,6 @@ public class NewWatchController {
 
     @FXML
     protected void close() {
-        homeController.switchTo();
+        homeController.switchBack();
     }
 }

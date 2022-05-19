@@ -124,22 +124,23 @@ public class WeatherConditions {
         return precip;
     }
 
-    public float getPrecipprob() {
+    public float getPrecipProb() {
         return precipprob;
     }
 
-    public float getWindgust() {
+    public float getWindGust() {
         return windgust;
     }
 
-    public float getWindspeed() {
+    public float getWindSpeed() {
         return windspeed;
     }
 
-    public float getUvindex() {
+    public float getUvIndex() {
         return uvindex;
     }
 
+    // TODO: this method somehow returns null
     public String getConditions() {
         return conditions;
     }

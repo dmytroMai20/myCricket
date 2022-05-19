@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="350.0" prefWidth="350.0" style="-fx-background-color: #679BF1#679BF1;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefWidth="350.0" style="-fx-background-color: #679BF1;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <VBox prefWidth="330.0" spacing="20.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
          <children>
@@ -14,7 +14,7 @@
                <children>
                   <VBox alignment="CENTER_LEFT" prefWidth="230.0">
                      <children>
-                        <Label text="Event #1" textFill="WHITE">
+                        <Label text="Event #1" textFill="WHITE" wrapText="true">
                            <font>
                               <Font name="SF Pro Display Bold" size="24.0" />
                            </font>
@@ -38,13 +38,105 @@
                   </Label>
                </children>
             </HBox>
-            <VBox>
+            <VBox spacing="10.0">
                <children>
-                  <Label opacity="0.8" text="There might be something that you wanna fill in here..." textFill="#e5e5e5" wrapText="true">
+                  <Label opacity="0.8" text="There might be something that you wanna fill in here..." textFill="WHITE" wrapText="true">
                      <font>
                         <Font name="SF Pro Display Bold" size="13.0" />
                      </font>
                   </Label>
+                  <HBox alignment="CENTER" prefWidth="330.0" spacing="10.0">
+                     <children>
+                        <VBox alignment="CENTER" prefWidth="100.0">
+                           <children>
+                              <Label opacity="0.6" text="Chance of Rain" textFill="WHITE" wrapText="true">
+                                 <font>
+                                    <Font name="SF Pro Display Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="TOP_CENTER" contentDisplay="TOP" opacity="0.8" prefWidth="100.0" text="14%" textAlignment="CENTER" textFill="WHITE">
+                                 <font>
+                                    <Font name="SF Pro Display Regular" size="36.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefWidth="100.0">
+                           <children>
+                              <Label opacity="0.6" text="Wind Speed" textFill="WHITE" wrapText="true">
+                                 <font>
+                                    <Font name="SF Pro Display Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="TOP_CENTER" contentDisplay="TOP" opacity="0.8" prefWidth="100.0" text="23.8" textAlignment="CENTER" textFill="WHITE">
+                                 <font>
+                                    <Font name="SF Pro Display Regular" size="36.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefWidth="100.0">
+                           <children>
+                              <Label opacity="0.6" text="Humidity" textFill="WHITE" wrapText="true">
+                                 <font>
+                                    <Font name="SF Pro Display Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="TOP_CENTER" contentDisplay="TOP" opacity="0.8" prefWidth="100.0" text="77%" textAlignment="CENTER" textFill="WHITE">
+                                 <font>
+                                    <Font name="SF Pro Display Regular" size="36.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefWidth="330.0" spacing="10.0">
+                     <children>
+                        <VBox alignment="CENTER" prefWidth="100.0">
+                           <children>
+                              <Label opacity="0.6" text="Amount of Rain" textFill="WHITE" wrapText="true">
+                                 <font>
+                                    <Font name="SF Pro Display Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="TOP_CENTER" contentDisplay="TOP" opacity="0.8" prefWidth="100.0" text="0.0" textAlignment="CENTER" textFill="WHITE">
+                                 <font>
+                                    <Font name="SF Pro Display Regular" size="36.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefWidth="100.0">
+                           <children>
+                              <Label opacity="0.6" text="Wind Gust" textFill="WHITE" wrapText="true">
+                                 <font>
+                                    <Font name="SF Pro Display Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="TOP_CENTER" contentDisplay="TOP" opacity="0.8" prefWidth="100.0" text="36.7" textAlignment="CENTER" textFill="WHITE">
+                                 <font>
+                                    <Font name="SF Pro Display Regular" size="36.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefWidth="100.0">
+                           <children>
+                              <Label opacity="0.6" text="UV Index" textFill="WHITE" wrapText="true">
+                                 <font>
+                                    <Font name="SF Pro Display Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="TOP_CENTER" contentDisplay="TOP" opacity="0.8" prefWidth="100.0" text="4.0" textAlignment="CENTER" textFill="WHITE">
+                                 <font>
+                                    <Font name="SF Pro Display Regular" size="36.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
                   <Label opacity="0.8" text="But I'm not sure what." textFill="WHITE" wrapText="true">
                      <font>
                         <Font name="SF Pro Display Bold" size="13.0" />

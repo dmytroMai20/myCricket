@@ -7,7 +7,7 @@ public class Weather {
 
     public static WeatherConditions getWeather(String longitude, String latitude, LocalDateTime dateTime){
         //String handling to get the data in the required form.
-        String latAndLong = latitude + "%2C" + longitude;
+        String latAndLong = longitude + "%2C" + latitude;
         String month = Integer.toString(dateTime.getMonthValue());
         if (month.length() == 1){
             month = "0" + month;
