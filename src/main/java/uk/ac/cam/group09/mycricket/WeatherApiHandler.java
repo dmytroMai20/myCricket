@@ -84,6 +84,7 @@ public class WeatherApiHandler {
             HashMap<String,Object> hourlyCond = new HashMap<String,Object>();
 
             hourlyCond.put("datetime",hour.getString("datetime"));
+            hourlyCond.put("conditions",hour.getString("conditions"));
             String[] keys = new String[] {
                     "temp",
                     "precip",
@@ -95,7 +96,6 @@ public class WeatherApiHandler {
                     "visibility",
                     "uvindex",
                     "severerisk",
-                    "conditions"
             };
             for (String key : keys) {
                 try {

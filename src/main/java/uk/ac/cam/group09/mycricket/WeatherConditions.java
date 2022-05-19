@@ -26,7 +26,7 @@ public class WeatherConditions {
         visibility = (float)data.get("visibility");
         uvindex = (float)data.get("uvindex");
         severerisk = (float)data.get("severerisk");
-        conditions = (String)data.get("conditions");
+        conditions = data.get("conditions").toString();
     }
 
     public Risk goodToPlay(){
