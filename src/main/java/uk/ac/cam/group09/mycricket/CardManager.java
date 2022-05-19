@@ -48,10 +48,15 @@ public class CardManager {
         Risk.RiskLevel matchRisk = weather.goodToPlay().getRisk();
         switch (matchRisk){
             case NONE: this.riskLevel.set(0);
-            case LOW: this.riskLevel.set(1);
-            case MEDIUM: this.riskLevel.set(1);
-            case HIGH: this.riskLevel.set(2);
-            case EXTREME: this.riskLevel.set(2);
+            break;
+            case LOW:
+            case MEDIUM:
+                this.riskLevel.set(1);
+            break;
+            case HIGH:
+            case EXTREME:
+                this.riskLevel.set(2);
+                break;
         }
     }
 
@@ -73,10 +78,15 @@ public class CardManager {
         Risk.RiskLevel matchRisk = weather.goodToPlay().getRisk();
         switch (matchRisk){
             case NONE: this.riskLevel.set(0);
-            case LOW: this.riskLevel.set(1);
-            case MEDIUM: this.riskLevel.set(1);
-            case HIGH: this.riskLevel.set(2);
-            case EXTREME: this.riskLevel.set(2);
+                break;
+            case LOW:
+            case MEDIUM:
+                this.riskLevel.set(1);
+                break;
+            case HIGH:
+            case EXTREME:
+                this.riskLevel.set(2);
+                break;
         }
     }
 
