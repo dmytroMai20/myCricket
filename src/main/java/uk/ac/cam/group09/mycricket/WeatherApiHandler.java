@@ -23,7 +23,8 @@ public class WeatherApiHandler {
      */
     private final static String apiEndPoint="https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/";
     private final static String unitGroup="metric"; //us,metric,uk
-    private final static String apiKey="CLWNVGL8ZMZSCGUBCY2A6K7UY";
+    //private final static String apiKey="CLWNVGL8ZMZSCGUBCY2A6K7UY";
+    private final static String apiKey = "9284YT77SF9K6NKMVG84H6J22";
     private final static String include = "hours";
     private static URI buildReqString(String date, String location) throws URISyntaxException {
         StringBuilder requestBuilder=new StringBuilder(apiEndPoint);
