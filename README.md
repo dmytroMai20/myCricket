@@ -1,7 +1,5 @@
 # myCricket
 
-Readme_GroupXY.txt which explains how to run your code and what libraries are used
-
 ## How to run
 - Download and unzip code
 - Run Maven scripts on `pom.xml` file
