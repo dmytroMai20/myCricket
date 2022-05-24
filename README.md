@@ -2,7 +2,9 @@
 
 ## How to run
 - Download and unzip code
-- Run Maven scripts on `pom.xml` file
+- Open folder in IDE
+- (Using IntelliJ) To download dependencies, right click `pom.xml` -> Maven -> Download sources.
+- Run `src/main/java/uk.ac.cam.group09/mycricket/CricketApp.java`
 
 ## Libraries used
 - JavaFX (& SceneBuilder)
